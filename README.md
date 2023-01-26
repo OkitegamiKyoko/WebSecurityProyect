@@ -13,7 +13,12 @@ Todo el proyecto se realizara mediante GitHub, donde todos los integrantes del e
 |PostgreSQL|15|Recomendado|
 |NetBeans|16|Recomendada|
 |Java|8|Recomendado|
-# 
+# Documentación
+Para poder acceder a la documentacion del proyecto, es que se hará uso de la plataforma oneDrive para poder realizarlo de manera colavorativa y así todos tengamos acceso a la misma información.
+
+Toda la documentacion o material que se genere, debera ser subido y editado rirectamente desde esta carpeta.
+
+Link: https://tolucatecnm-my.sharepoint.com/:f:/g/personal/amartinezm2_toluca_tecnm_mx/EhtoI5TUecBNogXF-leRhHQBCxSfDweqPW_A9ybTJNVC3A?e=MffWID
 # Estandares de programación
 - Todo archivo que se genere debera tener:
   ```java
@@ -36,4 +41,4 @@ Esto para llevar un seguimiento adecuado sobre todos los cambios que se hayan ef
 
 Cada una de las carpetas tendran el nombre de la pagina principal o sobre que se tratan
 
-Gato 🙀 
+Gato 🐱 
