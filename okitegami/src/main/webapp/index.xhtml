@@ -3,9 +3,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Home</title>
+        <style>
+            .link{
+                font-family: cursive;
+            }
+        </style>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <div>Okitegami Company</div>
+        <h:form>
+            <h:commandButton value="loging" action="/pages/loging/loging.xhtml"></h:commandButton>
+            <h:commandLink action="/pages/loging/loging?faces-redirect=true" value="loging"></h:commandLink>
+            
+        </h:form>
+        <h:link outcome="/pages/loging/loging?faces-redirect=true" value="loging" styleClass="link"></h:link>
+        <button><a href="pages/loging/login.xhtml">Loging</a></button>
+        <img src="resources/images/error_404.png" alt="gato"/>
+        <h:graphicImage value="img/error_404.png" alt="gato2"></h:graphicImage>
     </h:body>
 </html>

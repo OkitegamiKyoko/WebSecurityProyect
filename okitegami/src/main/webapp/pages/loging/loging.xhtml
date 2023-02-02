@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Loging</title>
+    </h:head>
+    <h:body>
+        <h1>Okitegami Company</h1>
+        <ui:composition template="/resources/template/menu.xhtml">
+            <ui:define name='hola'>
+                
+        <h:graphicImage url='../../resources/img/error_404.jpg'></h:graphicImage>
+            </ui:define>
+        <h:graphicImage url='../../resources/img/error_404.jpg'></h:graphicImage>
+        </ui:composition>
+        <h:form>
+            <h:commandButton value="loging" action="/pages/loging/loging.xhtml"></h:commandButton>
+            <h:commandLink action="/loging/loging?faces-redirect=true" value="loging"></h:commandLink>
+            
+        </h:form>
+        <img src="../../resources/img/error_404.jpg" alt='hola'></img>
+        <h:graphicImage url='../../resources/img/error_404.jpg'></h:graphicImage>
+        <h:link outcome="/pages/loging/loging?faces-redirect=true" value="loging"></h:link>
+        <img src="../../resources/img/error_404.jpg" alt='hola'></img>
+        <img src="../../resources/img/error_404.jpg" alt="gato"/>
+    </h:body>
+</html>
