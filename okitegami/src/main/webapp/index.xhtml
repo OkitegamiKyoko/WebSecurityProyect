@@ -1,25 +1,24 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>Home</title>
-        <style>
-            .link{
-                font-family: cursive;
-            }
-        </style>
+        <h:outputStylesheet library="css" name="header.css"/>
     </h:head>
-    <h:body>
-        <div>Okitegami Company</div>
-        <h:form>
-            <h:commandButton value="loging" action="/pages/loging/loging.xhtml"></h:commandButton>
-            <h:commandLink action="/pages/loging/loging?faces-redirect=true" value="loging"></h:commandLink>
-            
-        </h:form>
-        <h:link outcome="/pages/loging/loging?faces-redirect=true" value="loging" styleClass="link"></h:link>
-        <button><a href="pages/loging/login.xhtml">Loging</a></button>
-        <img src="resources/images/error_404.png" alt="gato"/>
-        <h:graphicImage value="img/error_404.png" alt="gato2"></h:graphicImage>
+    <h:body styleClass="body">
+        <ui:insert name="banner">
+            <ui:include src="resources/template/menu.xhtml"></ui:include>
+        </ui:insert>
+        <div class="main">
+            <h1>Okitegami Company</h1>
+            <h:button value="Sing in" outcome="pages/loging/loging.xhtml?faces-redirect=true"></h:button>
+            <h:button value="Sing up" outcome="pages/register/newUser.xhtml?faces-redirect=true" disabled="true"></h:button>
+            <h:link outcome="pages/loging/loging?faces-redirect=true" value="loging" styleClass="link"></h:link>
+            <button><a href="pages/loging/login.xhtml">Loging</a></button>
+            <h:graphicImage library="images" name="error_404.png" alt="gato2"></h:graphicImage>
+        </div>
+        <h:graphicImage library="images" name="index_background.png" styleClass="background"></h:graphicImage>
     </h:body>
 </html>

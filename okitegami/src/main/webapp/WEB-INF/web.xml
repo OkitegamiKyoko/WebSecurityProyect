@@ -25,4 +25,12 @@
         <error-code>404</error-code>
         <location>/faces/pages/error/error_404.xhtml</location>
     </error-page>
+    <error-page>
+        <error-code>401</error-code>
+        <location>/faces/pages/error/error_401.xhtml</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/faces/pages/error/error_500.xhtml</location>
+    </error-page>
 </web-app>

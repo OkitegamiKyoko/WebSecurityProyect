@@ -8,22 +8,18 @@
     </h:head>
     <h:body>
         <h1>Okitegami Company</h1>
-        <ui:composition template="/resources/template/menu.xhtml">
-            <ui:define name='hola'>
-                
-        <h:graphicImage url='../../resources/img/error_404.jpg'></h:graphicImage>
-            </ui:define>
-        <h:graphicImage url='../../resources/img/error_404.jpg'></h:graphicImage>
-        </ui:composition>
         <h:form>
-            <h:commandButton value="loging" action="/pages/loging/loging.xhtml"></h:commandButton>
-            <h:commandLink action="/loging/loging?faces-redirect=true" value="loging"></h:commandLink>
-            
+            <h:column>
+                <h:outputLabel value="Usuario" for="user"></h:outputLabel>
+                <h:inputText id="user" requiredMessage="hola"></h:inputText>
+                <h:outputLabel value="Contraseña" for="password"></h:outputLabel>
+                <h:inputSecret id="password"></h:inputSecret>
+            </h:column>
+            <h:column>
+                
+            </h:column>
+            <h:commandButton value="Sign in"></h:commandButton>
+            <h:button value="name" outcome="pages/register/newUser"></h:button>
         </h:form>
-        <img src="../../resources/img/error_404.jpg" alt='hola'></img>
-        <h:graphicImage url='../../resources/img/error_404.jpg'></h:graphicImage>
-        <h:link outcome="/pages/loging/loging?faces-redirect=true" value="loging"></h:link>
-        <img src="../../resources/img/error_404.jpg" alt='hola'></img>
-        <img src="../../resources/img/error_404.jpg" alt="gato"/>
     </h:body>
 </html>

@@ -3,16 +3,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
-
-        <div id="top" class="top">
-            <ui:insert name="top">Top</ui:insert>
+    <ui:composition>
+        <div id="header" class="banner">
+            <h:button styleClass="menu"></h:button>
+            <h:graphicImage library="images" name="error_500.png" styleClass="logo"></h:graphicImage>
+            <div class="usuario">
+                <h:button value="Registrar" styleClass="registrar"></h:button>
+                <h:button value="Ingresar" outcome="pages/loging/loging.xhtml?faces-redirect=true" styleClass="iniciar"></h:button>
+            </div>
         </div>
-
-        <div id="content" class="center_content">
-            <ui:insert name="content">Content</ui:insert>
-        </div>
-    <img src="../img/error_404.jpg" alt="gato"/>
-    
-        <h:graphicImage url="#{FacesContext.getCurrentInstance().getExternalContext()}/resources/img/error_404.jpg"></h:graphicImage>
-
+        <div class="banner_background"></div>
+    </ui:composition>
 </html>
