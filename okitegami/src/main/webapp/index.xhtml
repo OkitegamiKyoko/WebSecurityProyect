@@ -4,10 +4,13 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
+        
         <title>Home</title>
+        <link rel="icon" href="#{resource['images:icon.jpg']}"/>
         <h:outputStylesheet library="css" name="header.css"/>
+        <h:outputScript library="js" name="efects.js"/>
     </h:head>
-    <h:body styleClass="body">
+    <h:body styleClass="body" id="body" >
         <ui:insert name="banner">
             <ui:include src="resources/template/menu.xhtml"></ui:include>
         </ui:insert>
@@ -17,8 +20,8 @@
             <h:button value="Sing up" outcome="pages/register/newUser.xhtml?faces-redirect=true" disabled="true"></h:button>
             <h:link outcome="pages/loging/loging?faces-redirect=true" value="loging" styleClass="link"></h:link>
             <button><a href="pages/loging/login.xhtml">Loging</a></button>
-            <h:graphicImage library="images" name="error_404.png" alt="gato2"></h:graphicImage>
+            <h:graphicImage library="images" name="error_404.png" alt="gato2" style="position: absolute;top:1000px" onclick="index.jsp"></h:graphicImage>
         </div>
-        <h:graphicImage library="images" name="index_background.png" styleClass="background"></h:graphicImage>
+        
     </h:body>
 </html>
