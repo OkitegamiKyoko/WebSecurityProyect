@@ -16,9 +16,11 @@
             }
         </style>
     </h:head>
-    <h:body styleClass="body_error_500">
-        <ui:decorate template="/WEB-INF/resources/template/header.xhtml">
-            <ui:param name="top" value="top"></ui:param>
-        </ui:decorate>
+    <h:body styleClass="main">
+        <div style='width: 100%'>
+            <h:form>
+                <h:graphicImage library="images" name="icono.jpg" alt="error500" styleClass="error404"/>
+            </h:form>
+        </div>
     </h:body>
 </html>

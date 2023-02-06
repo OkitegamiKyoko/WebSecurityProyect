@@ -4,16 +4,15 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
-        
         <title>Home</title>
         <link rel="icon" href="#{resource['images:icon.jpg']}"/>
         <h:outputStylesheet library="css" name="header.css"/>
         <h:outputScript library="js" name="efects.js"/>
     </h:head>
-    <h:body styleClass="body" id="body" >
-        <ui:insert name="banner">
-            <ui:include src="resources/template/menu.xhtml"></ui:include>
-        </ui:insert>
+    <h:body styleClass="body" id="body">
+        <ui:decorate template="/WEB-INF/resources/template/header.xhtml">
+            <ui:param name="top" value="top"></ui:param>
+        </ui:decorate>
         <div class="main">
             <h1>Okitegami Company</h1>
             <h:button value="Sing in" outcome="pages/loging/loging.xhtml?faces-redirect=true"></h:button>
@@ -22,6 +21,5 @@
             <button><a href="pages/loging/login.xhtml">Loging</a></button>
             <h:graphicImage library="images" name="error_404.png" alt="gato2" style="position: absolute;top:1000px" onclick="index.jsp"></h:graphicImage>
         </div>
-        
     </h:body>
 </html>

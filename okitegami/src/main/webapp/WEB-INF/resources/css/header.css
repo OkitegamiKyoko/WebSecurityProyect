@@ -6,7 +6,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     Created on : 4 feb. 2023, 17:54:24
     Author     : meli_
 */
-
+.button{
+    cursor: pointer;
+}
 .link{
     font-family: cursive;
 }
@@ -60,10 +62,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     font-weight: 400;
     font-size: 14px;
     text-align: center;
-    cursor: pointer;
 }
 
-.body{
+body{
     margin: 0;
 }
 body{
@@ -84,21 +85,19 @@ body{
 .body::-webkit-scrollbar:hover{
     width: 15px;
 }
-body{
+.body{
     background-image: url("#{resource['images/index_background.png']}");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
 .menu{
-    width: 94px;
+    display: flex;
+    width: 90px;
     height: 60px;
     padding: 0px 10px 0px 10px;
     background: #ebebeb;
     color: #232323;
-    border-color: #232323;
-    border-width: 1px;
-    border-style: solid;
     font-family: "Helvetica";
     font-weight: 400;
     font-size: 14px;
@@ -113,6 +112,9 @@ body{
     height: 60px;
     background: #e6e6e6;
     align-self: center;
+    background-image: url("#{resource['images/error_500.png']}");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 .background{
     min-width: 100%;
@@ -128,4 +130,27 @@ body{
 .main{
     position: absolute;
     top: 60px;
+}
+.body_error_404{
+    background-image: url("#{resource['images/error_404.png']}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 8%;
+}
+.body_error_500{
+    background-image: url("#{resource['images/error_500.png']}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.formulario{
+    width: 432px;
+    height: 579px;
+    padding: 8px 8px 8px 8px;
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.75);
+    background: #ffffff;
+    border-color: #000000;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 30px 30px 30px 30px;
 }

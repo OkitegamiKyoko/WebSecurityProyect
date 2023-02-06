@@ -5,21 +5,25 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>Loging</title>
+        <link rel="icon" href="#{resource['images:icon.jpg']}"/>
     </h:head>
-    <h:body>
+    <h:body styleClass="body">
+        <ui:decorate template="/WEB-INF/resources/template/header.xhtml">
+            <ui:param name="top" value="top"></ui:param>
+        </ui:decorate>
         <h1>Okitegami Company</h1>
-        <h:form>
-            <h:column>
-                <h:outputLabel value="Usuario" for="user"></h:outputLabel>
-                <h:inputText id="user" requiredMessage="hola"></h:inputText>
-                <h:outputLabel value="Contraseña" for="password"></h:outputLabel>
-                <h:inputSecret id="password"></h:inputSecret>
-            </h:column>
-            <h:column>
-                
-            </h:column>
-            <h:commandButton value="Sign in"></h:commandButton>
-            <h:button value="name" outcome="pages/register/newUser"></h:button>
-        </h:form>
+        <div class="formulario">
+            <h:form>
+                <h:column>
+                    <h:outputLabel value="Usuario" for="user"></h:outputLabel>
+                    <h:inputText id="user" requiredMessage="hola"></h:inputText>
+                    <h:outputLabel value="Contraseña" for="password"></h:outputLabel>
+                    <h:inputSecret id="password"></h:inputSecret>
+                </h:column>
+                <h:commandButton value="Iniciar"></h:commandButton>
+                <h:button value="Registrar" outcome="register"></h:button>
+            </h:form>
+        </div>
+        <button onclick="window.history.back();" title="Volver" >Volver</button>
     </h:body>
 </html>
