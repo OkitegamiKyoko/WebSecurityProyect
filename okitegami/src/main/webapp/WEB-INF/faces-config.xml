@@ -26,7 +26,7 @@
     <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>case1</from-outcome>
+            <from-outcome>loging</from-outcome>
             <to-view-id>/pages/loging/loging.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
@@ -39,22 +39,7 @@
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
-        <from-view-id>/index.xhtml</from-view-id>
-        <navigation-case>
-            <from-outcome>about</from-outcome>
-            <to-view-id>/pages/about/about.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>loging</from-outcome>
-            <to-view-id>/pages/loging/loging.xhtml</to-view-id>
-        </navigation-case>
-    </navigation-rule>
-    <navigation-rule>
         <from-view-id>/pages/error/error_404.xhtml</from-view-id>
-        <navigation-case>
-            <from-outcome>case1</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
-        </navigation-case>
         <navigation-case>
             <from-outcome>loging</from-outcome>
             <to-view-id>/pages/loging/loging.xhtml</to-view-id>
@@ -72,7 +57,7 @@
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>case2</from-outcome>
+            <from-outcome>register</from-outcome>
             <to-view-id>/pages/register/register.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
@@ -86,14 +71,22 @@
     <navigation-rule>
         <from-view-id>/pages/error/error_500.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>case1</from-outcome>
+            <from-outcome>index</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>register</from-outcome>
+            <to-view-id>/pages/register/register.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>loging</from-outcome>
+            <to-view-id>/pages/loging/loging.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/pages/error/error_403.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>ondex</from-outcome>
+            <from-outcome>index</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
@@ -123,11 +116,7 @@
             <to-view-id>/pages/about/about.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>case3</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>case1</from-outcome>
+            <from-outcome>index</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
@@ -149,7 +138,7 @@
     <navigation-rule>
         <from-view-id>/pages/about/about.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>case1</from-outcome>
+            <from-outcome>register</from-outcome>
             <to-view-id>/pages/register/register.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
