@@ -66,6 +66,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 
 body{
     margin: 0;
+    background-color:#28c4dd;
 }
 body{
     overflow: overlay;
@@ -90,6 +91,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    backface-visibility: 0.5;
 }
 .menu{
     display: flex;
@@ -112,6 +114,7 @@ body{
     background-image: url("#{resource['images/error_500.png']}");
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    justify-self: center;
 }
 .background{
     min-width: 100%;
@@ -125,6 +128,7 @@ body{
     justify-content: space-evenly;
 }
 .main{
+    min-width: 100%;
     position: absolute;
     top: 60px;
 }
@@ -194,4 +198,61 @@ body{
 }
 .inputFile{
     margin-top: 10px;
+}
+.title_Main{
+    font-size: 10em;
+    text-align: center;
+    position: absolute;
+}
+.Center_Logo{
+    min-width: 100%;
+    height: 901px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("#{resource['images/index_title_main.png']}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.Box{
+    min-width: 100%;
+    height: 901px;
+    background-image: url("#{resource['images/error_500.png']}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.TextBox1{
+    background-color: white;
+    max-width: 50%;
+    min-height: 901px;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(270deg, rgba(255,255,255,0.6839110644257703) 0%, rgba(255,255,255,1) 28%, rgba(255,255,255,1) 100%);
+    border: none;
+}
+#box1{
+    background-image: url("#{resource['images/error_500.png']}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#box2{
+    background-image: url("#{resource['images/error_401.png']}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#titulo{
+    font-family: cursive;
+    font-size: 5em;
+}
+*, ::after, ::before {
+    box-sizing: revert;
+}
+#loging{
+    display: block;
 }

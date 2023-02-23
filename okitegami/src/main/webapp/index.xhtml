@@ -202,12 +202,24 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWK0KKKKKKKKKKKKKKKKKKKKKKK000000000OOOOOOO
             <ui:param name="top" value="top"></ui:param>
         </ui:decorate>
         <div class="main">
-            <h1>Okitegami Company</h1>
-            <h:button value="Sing in" outcome="pages/loging/loging.xhtml?faces-redirect=true"></h:button>
-            <h:button value="Sing up" outcome="pages/register/newUser.xhtml?faces-redirect=true" disabled="true"></h:button>
-            <h:link outcome="pages/loging/loging?faces-redirect=true" value="loging" styleClass="link"></h:link>
-            <button><a href="pages/loging/login.xhtml">Loging</a></button>
-            <h:graphicImage library="images" name="error_404.png" alt="gato2" style="position: absolute;top:1000px" onclick="index.jsp"></h:graphicImage>
+            <div class="Center_Logo">
+                <h1 class="title_Main">Okitegami Company</h1>
+            </div>
+            <div class="Box" id="box1">
+                <div class="TextBox1">
+                    <h1 id="titulo">Titulo</h1>
+                    <p>hfgzfjkhgjksdlahfgljkhswfkjhdfakljshdflkjhdsfkjhflkhdsfkuhdsjklfhdskljfhlisuj
+                       dhfkjsdhfkljhdsjkfhsdkjfhdjkslhfkjdhsfljkshadfjkhsdfjklhfkjhsdfjkhdfjkhdsfkjh
+                       skjfhlaskdjhfaksjlfhkjsdhfkjlhf</p>
+                </div>
+            </div>
+            <div class="Box" id="box2">
+                <h:button value="Sing in" outcome="pages/loging/loging.xhtml?faces-redirect=true"></h:button>
+                <h:button value="Sing up" outcome="pages/register/newUser.xhtml?faces-redirect=true" disabled="true"></h:button>
+                <h:link outcome="pages/loging/loging?faces-redirect=true" value="loging" styleClass="link"></h:link>
+                <button><a href="pages/loging/login.xhtml">Loging</a></button>
+                <h:graphicImage library="images" name="error_404.png" alt="gato2" onclick="index.jsp"></h:graphicImage>
+            </div>
         </div>
     </h:body>
 </html>

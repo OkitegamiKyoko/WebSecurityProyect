@@ -7,7 +7,7 @@
         <title>Internal Server Error | Okitegami</title>
         <style>
             .main{
-                background-image: url("#{FacesContext.getCurrentInstance().getExternalContext()}resources/images/error404.png");
+                background-image: url("#{resource['images/error_501.png']}");
                 margin: 0;
             }
             .error404{
@@ -19,7 +19,7 @@
     <h:body styleClass="main">
         <div style='width: 100%'>
             <h:form>
-                <h:graphicImage library="images" name="icono.jpg" alt="error500" styleClass="error404"/>
+                <h:graphicImage library="images" name="icon.jpg" alt="error500" styleClass="error404"/>
             </h:form>
         </div>
     </h:body>
