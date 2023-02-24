@@ -2,20 +2,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <ui:composition>
-        <div id="menu">
-            <ui:insert name="menu">
-                <div id="banner" class="banner">
-                    <h:button styleClass="menu" value="Menu"></h:button>
-                    <h:graphicImage library="images" name="error_500.png" styleClass="logo" alt="logo" onclick="goToIndex"></h:graphicImage>
-                    <div class="usuario">
-                        <h:button value="Registrar" styleClass="registrar"></h:button>
-                        <h:button value="Ingresar" outcome="loging"  styleClass="iniciar button"></h:button>
-                    </div>
-                </div>
-                <div class="banner_background"></div>
-            </ui:insert>
-        </div>
+        <ui:insert name="menu">
+            <div id="menu_web">
+                <ul style="list-style-type: none">
+                    <li><h:link outcome="index" styleClass="TextLinkMenu">Inicio</h:link></li>
+                    <c:if test="true">
+                    <li><h:link styleClass="TextLinkMenu">Conductores</h:link></li>
+                    <li><h:link styleClass="TextLinkMenu">Limpieza</h:link></li>
+                    <li><h:link styleClass="TextLinkMenu">Gatos</h:link></li>
+                    </c:if>
+                    <li value="About"><h:link outcome="About" value="About" styleClass="TextLinkMenu"></h:link></li>
+                </ul>
+            </div>
+        </ui:insert>
     </ui:composition>
 </html>

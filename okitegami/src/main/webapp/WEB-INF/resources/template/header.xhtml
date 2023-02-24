@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -14,7 +15,7 @@
         <div id="top" class="top">
             <ui:insert name="#{top}">
                 <div id="banner" class="banner">
-                    <div class="menu button"></div>
+                    <div class="menu button" id="bt_menu_header" onclick="verMenu()"></div>
                     <h:button styleClass="logo button" outcome="index"></h:button>
                     <div class="usuario">
                         <h:button value="Registrar" styleClass="registrar button" outcome="register"></h:button>
@@ -23,6 +24,7 @@
                 </div>
                 <div class="banner_background"></div>
             </ui:insert>
+            <ui:decorate template="/WEB-INF/resources/template/menu.xhtml"/>
         </div>
     </h:body>
 </html>

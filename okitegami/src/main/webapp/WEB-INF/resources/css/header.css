@@ -72,7 +72,7 @@ body{
     overflow: overlay;
 }
 .body::-webkit-scrollbar{
-    width: 10px;
+    width: 0px;
     border-radius: 10px;
 }
 .body::-webkit-scrollbar-thumb {
@@ -233,6 +233,7 @@ body{
     justify-content: center;
     background: linear-gradient(270deg, rgba(255,255,255,0.6839110644257703) 0%, rgba(255,255,255,1) 28%, rgba(255,255,255,1) 100%);
     border: none;
+    word-break: break-all;
 }
 #box1{
     background-image: url("#{resource['images/error_500.png']}");
@@ -255,4 +256,33 @@ body{
 }
 #loging{
     display: block;
+}
+p{
+  animation-duration: 5s;
+  animation-name: slidein;
+  margin-right: 80px;
+  margin-left: 80px;
+}
+#loging{
+    display: block;
+}
+#menu_web{
+    display: none;
+    z-index: 1000;
+    position:absolute;
+    background-color: white;
+    padding: 10px;
+}
+.TextLinkMenu, li{
+    text-decoration:none;
+    color: black;
+    font-size: 1.1em;
+    margin: 5px;
+}
+ul li a:hover{
+    background-color:rgba(91, 90, 91, 0.22);
+}
+ul{
+    margin: 10px;
+    padding: 0px;
 }

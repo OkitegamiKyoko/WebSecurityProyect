@@ -37,6 +37,10 @@
             <from-outcome>register</from-outcome>
             <to-view-id>/pages/register/register.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>About</from-outcome>
+            <to-view-id>/pages/about/about.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/pages/error/error_404.xhtml</from-view-id>
@@ -140,6 +144,10 @@
         <navigation-case>
             <from-outcome>register</from-outcome>
             <to-view-id>/pages/register/register.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>About</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>
