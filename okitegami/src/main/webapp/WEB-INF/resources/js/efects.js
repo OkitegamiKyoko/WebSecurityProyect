@@ -16,6 +16,6 @@ function verMenu(){
 };
 
 let script=document.createElement('script');
-function(){
+function ver(){
   script  
 };
