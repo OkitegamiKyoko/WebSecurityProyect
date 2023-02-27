@@ -18,11 +18,11 @@
             <h:form styleClass="loging">
                 <h1 class="titulo_form h1">Loging</h1>
                 <h:outputLabel styleClass="user_label col-sm-2 col-form-label" value="Usuario" for="user"></h:outputLabel>
-                <h:inputText styleClass="user_input form-control" id="user" requiredMessage="hola" pt:placeholder="correo@example.com"></h:inputText>
+                <h:inputText styleClass="user_input form-control" id="user" requiredMessage="hola" pt:placeholder="correo@example.com" value="#{userController.user.email}"></h:inputText>
                 <h:outputLabel styleClass="password_label col-sm-2 col-form-label" value="Contraseña" for="password"></h:outputLabel>
-                <h:inputSecret styleClass="password_input form-control" id="password" pt:placeholder="password"></h:inputSecret>
+                <h:inputSecret styleClass="password_input form-control" id="password" pt:placeholder="password" value="#{userController.user.password}"></h:inputSecret>
                 <div class="botones_form">
-                    <h:commandButton value="Iniciar" type="summit" styleClass="btn btn-success"></h:commandButton>
+                    <h:commandButton value="Iniciar" type="summit" styleClass="btn btn-success" action="#{userController.validar()}"></h:commandButton>
                     <h:button value="Registrar" outcome="register" styleClass="btn btn-primary"></h:button>
                 </div>
             </h:form>

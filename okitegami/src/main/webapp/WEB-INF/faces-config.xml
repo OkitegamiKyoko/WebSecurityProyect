@@ -45,6 +45,10 @@
             <from-outcome>users</from-outcome>
             <to-view-id>/pages/users/users.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>error_401</from-outcome>
+            <to-view-id>/pages/error/error_401.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/pages/error/error_404.xhtml</from-view-id>
@@ -90,6 +94,10 @@
             <from-outcome>loging</from-outcome>
             <to-view-id>/pages/loging/loging.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>About</from-outcome>
+            <to-view-id>/pages/about/about.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/pages/error/error_403.xhtml</from-view-id>
@@ -127,6 +135,10 @@
             <from-outcome>index</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>error_401</from-outcome>
+            <to-view-id>/pages/error/error_401.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/pages/loging/loging.xhtml</from-view-id>
@@ -142,20 +154,35 @@
             <from-outcome>index</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>error_401</from-outcome>
+            <to-view-id>/pages/error/error_401.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>error_404</from-outcome>
+            <to-view-id>/pages/error/error_404.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/pages/about/about.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>loging</from-outcome>
-            <to-view-id>/pages/loging/loging.xhtml</to-view-id>
+            <from-outcome>register</from-outcome>
+            <to-view-id>/pages/register/register.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>About</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/pages/users/users.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>index</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>register</from-outcome>
-            <to-view-id>/pages/register/register.xhtml</to-view-id>
+            <from-outcome>users</from-outcome>
+            <to-view-id>/pages/users/users.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>About</from-outcome>

@@ -18,8 +18,15 @@
                     <div class="menu button" id="bt_menu_header" onclick="verMenu()"></div>
                     <h:button styleClass="logo button" outcome="index"></h:button>
                     <div class="usuario">
-                        <h:button value="Registrar" styleClass="registrar button" outcome="register"></h:button>
-                        <h:button value="Ingresar" outcome="loging"  styleClass="iniciar button"></h:button>
+                        <c:if test="#{userController.aux==null}">
+                            <h:button value="Registrar" styleClass="registrar button" outcome="register"></h:button>
+                            <h:button value="Ingresar" outcome="loging"  styleClass="iniciar button"></h:button>
+                        </c:if>
+                        <c:if test="#{userController.aux!=null}">
+                            <h:form>
+                                <h:commandButton value="Cerrar secion" styleClass="registrar button" action="#{userController.close()}"></h:commandButton>
+                            </h:form>
+                        </c:if>
                     </div>
                 </div>
                 <div class="banner_background"></div>

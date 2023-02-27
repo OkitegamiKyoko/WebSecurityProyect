@@ -9,8 +9,8 @@
             <div id="menu_web">
                 <ul style="list-style-type: none">
                     <li><h:link outcome="index" styleClass="TextLinkMenu">Inicio</h:link></li>
-                    <li><h:link styleClass="TextLinkMenu" outcome="users">Ususarios</h:link></li>
-                    <c:if test="true">
+                    <c:if test="#{userController.user.status!=0}">
+                        <li><h:link outcome="users" styleClass="TextLinkMenu">Usuarios</h:link></li>
                         <li><h:link styleClass="TextLinkMenu">Conductores</h:link></li>
                         <li><h:link styleClass="TextLinkMenu">Limpieza</h:link></li>
                         <li><h:link styleClass="TextLinkMenu">Gatos</h:link></li>

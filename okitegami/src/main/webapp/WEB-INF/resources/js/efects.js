@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/JavaScript.js to edit this template
  */
 const menuBtn=document.getElementsByClassName("menu");
-menuBtn.addEventListener("mouseover",verMenu);
 function verMenu(){
     console.log(menuBtn);
         if (document.getElementById("menu_web").getAttribute("style")==="display: block;") {
@@ -16,6 +15,3 @@ function verMenu(){
 };
 
 let script=document.createElement('script');
-function ver(){
-  script  
-};

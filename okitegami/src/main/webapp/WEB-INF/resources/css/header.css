@@ -91,7 +91,10 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    backface-visibility: 0.5;
+    /*backface-visibility: ;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 .menu{
     display: flex;
@@ -285,4 +288,48 @@ ul li a:hover{
 ul{
     margin: 10px;
     padding: 0px;
+}
+.fondo_datos{
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 7.5px;
+    margin-bottom: 7.5px;
+    box-shadow: 16px 12px 14px 0px rgba(0,0,0,0.81);
+    -webkit-box-shadow: 16px 12px 14px 0px rgba(0,0,0,0.81);
+    -moz-box-shadow: 16px 12px 14px 0px rgba(0,0,0,0.81);
+}
+.main_page{
+    width: 800px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/*#javax_faces_developmentstage_messages
+ Usado para mostar mensajes de error de redireccionamiento no definidos
+ Unicamente Habilitar en produccion o para revision de interfaces
+*/
+#javax_faces_developmentstage_messages{
+    
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+#fondo_table{
+    display: block;
+    padding: 10px;
+    padding: 10px;
+}
+.tabla{
+    width: 100%;
+    border: 1px solid;
+    border-radius: 10px;
+}
+tr{
+    border-top: 1px solid;
+}
+td{
+    text-align: center;
 }
