@@ -18,13 +18,13 @@
                     <div class="menu button" id="bt_menu_header" onclick="verMenu()"></div>
                     <h:button styleClass="logo button" outcome="index"></h:button>
                     <div class="usuario">
-                        <c:if test="#{userController.aux==null}">
+                        <c:if test="#{sessionController.exist()==false}">
                             <h:button value="Registrar" styleClass="registrar button" outcome="register"></h:button>
                             <h:button value="Ingresar" outcome="loging"  styleClass="iniciar button"></h:button>
                         </c:if>
-                        <c:if test="#{userController.aux!=null}">
+                        <c:if test="#{sessionController.exist()}">
                             <h:form>
-                                <h:commandButton value="Cerrar secion" styleClass="registrar button" action="#{userController.close()}"></h:commandButton>
+                                <h:commandButton value="Cerrar secion" styleClass="registrar button" action="#{sessionController.close()}"></h:commandButton>
                             </h:form>
                         </c:if>
                     </div>

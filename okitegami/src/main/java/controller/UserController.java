@@ -18,9 +18,9 @@ import modelos.Users;
  * @author meli_
  */
 @Named("userController")
-@SessionScoped
+@ViewScoped
 public class UserController implements Serializable {
-    private Users user,aux=null;
+    private Users user;
     @EJB
     private UserFacade uf;
     
@@ -34,7 +34,7 @@ public class UserController implements Serializable {
     }
 
     public void setUser(Users user) {
-        this.user = user=aux;
+        this.user = user;
     }
 
     public Users getUser() {
@@ -42,10 +42,6 @@ public class UserController implements Serializable {
             return this.user=new Users();
         }
         return user;
-    }
-
-    public Users getAux() {
-        return aux;
     }
     
     public void delete(Users user){
@@ -58,24 +54,7 @@ public class UserController implements Serializable {
         return this.user=this.uf.find(user);
     }
     
-    public String validar(){
-        this.user=this.uf.findByEmail(this.user.getEmail());
-        if (this.user!=null) {
-            String email=this.user.getEmail(),
-                password=this.user.getPassword();
-            if (password.equals(this.user.getPassword())) {
-                aux=user;
-                return "index";
-            }else{
-                return "error_401";
-            }
-        }else{
-            this.user=null;
-            return "error_404";
-        }
-    }
-    public String close(){
-        this.user=aux=null;
-        return "index";
+    public Users findByEmail(String email){
+        return this.uf.findByEmail(email);
     }
 }

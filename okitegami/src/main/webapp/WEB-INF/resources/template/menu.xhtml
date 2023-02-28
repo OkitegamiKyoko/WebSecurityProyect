@@ -9,11 +9,14 @@
             <div id="menu_web">
                 <ul style="list-style-type: none">
                     <li><h:link outcome="index" styleClass="TextLinkMenu">Inicio</h:link></li>
-                    <c:if test="#{userController.user.status!=0}">
-                        <li><h:link outcome="users" styleClass="TextLinkMenu">Usuarios</h:link></li>
-                        <li><h:link styleClass="TextLinkMenu">Conductores</h:link></li>
-                        <li><h:link styleClass="TextLinkMenu">Limpieza</h:link></li>
-                        <li><h:link styleClass="TextLinkMenu">Gatos</h:link></li>
+                    <c:if test="#{sessionController.exist()}">
+                        <c:if test="#{sessionController.session.nivel==1}">
+                            <li><h:outputText value="#{sessionController.session.email}"></h:outputText></li>
+                            <li><h:link outcome="users" styleClass="TextLinkMenu">Usuarios</h:link></li>
+                            <li><h:link styleClass="TextLinkMenu">Conductores</h:link></li>
+                            <li><h:link styleClass="TextLinkMenu">Limpieza</h:link></li>
+                            <li><h:link styleClass="TextLinkMenu">Gatos</h:link></li>
+                        </c:if>
                     </c:if>
                     <li value="About"><h:link outcome="About" value="About" styleClass="TextLinkMenu"></h:link></li>
                 </ul>
