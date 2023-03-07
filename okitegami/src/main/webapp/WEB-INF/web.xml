@@ -41,4 +41,9 @@
         <error-code>501</error-code>
         <location>/faces/pages/error/error_501.xhtml</location>
     </error-page>
+    
+    <mime-mapping>
+        <extension>mp4</extension>
+        <mime-type>video/mp4</mime-type>
+    </mime-mapping>
 </web-app>

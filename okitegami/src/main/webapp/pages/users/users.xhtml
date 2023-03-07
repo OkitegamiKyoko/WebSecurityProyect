@@ -30,9 +30,7 @@
                             <f:facet name="header">
                                 <h:outputText value="ID"></h:outputText>
                             </f:facet>
-                            <c:if test="#{userController.count()!=0}">
                                 <h:outputText value="#{user.id}"></h:outputText>
-                            </c:if>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
@@ -48,10 +46,18 @@
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="DELETE"></h:outputText>
+                                <h:outputText value="STATUS"></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{user.status}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="ACTIONS"></h:outputText>
                             </f:facet>
                             <h:form>
+                                <h:commandButton value="Edit" action="#{userController.edit(user)}" ></h:commandButton>
                                 <h:commandButton value="Delete" action="#{userController.delete(user)}" ></h:commandButton>
+                                <h:commandButton value="Active" action="#{userController.active(user)}" ></h:commandButton>
                             </h:form>
                         </h:column>
                     </h:dataTable>

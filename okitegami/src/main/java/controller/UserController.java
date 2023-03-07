@@ -8,8 +8,10 @@ import dao.UserFacade;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
-import javax.enterprise.context.SessionScoped;
-import javax.faces.view.ViewScoped;
+import javax.enterprise.context.ApplicationScoped;
+//import javax.enterprise.context.RequestScoped;
+//import javax.enterprise.context.SessionScoped;
+//import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import modelos.Users;
 
@@ -18,9 +20,10 @@ import modelos.Users;
  * @author meli_
  */
 @Named("userController")
-@ViewScoped
+@ApplicationScoped
 public class UserController implements Serializable {
-    private Users user;
+    public static final long serialVersionUID=1L;
+    private Users user, userEdit;
     @EJB
     private UserFacade uf;
     
@@ -44,8 +47,20 @@ public class UserController implements Serializable {
         return user;
     }
     
+     public void setUserEdit(Users user) {
+        this.user = user;
+    }
+
+    public Users getUserEdit() {
+        return user;
+    }
     public void delete(Users user){
-        this.uf.remove(user);
+        user.setStatus(0);
+        uf.edit(user);
+    }
+    public void active(Users user){
+        user.setStatus(1);
+        uf.edit(user);
     }
     public int count(){
         return this.uf.count();
@@ -56,5 +71,10 @@ public class UserController implements Serializable {
     
     public Users findByEmail(String email){
         return this.uf.findByEmail(email);
+    }
+    
+    public String edit(Users user){
+        this.user=user;
+        return "userEdit";
     }
 }

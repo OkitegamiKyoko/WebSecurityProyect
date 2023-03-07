@@ -277,7 +277,13 @@ p{
     padding: 10px;
 }
 .TextLinkMenu, li{
-    text-decoration:none;
+    text-decoration: none;
+    color: black;
+    font-size: 1.1em;
+    margin: 5px;
+}
+.TextLinkMenu{
+    text-decoration: none;
     color: black;
     font-size: 1.1em;
     margin: 5px;

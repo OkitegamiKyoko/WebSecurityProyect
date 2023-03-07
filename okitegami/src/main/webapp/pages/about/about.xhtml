@@ -1,11 +1,20 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>Okitegami | About</title>
+        <link rel="icon" href="#{resource['images:icon.jpg']}"/>
+        <h:outputStylesheet library="css" name="header.css"/>
     </h:head>
-    <h:body>
-        <h1>Conocenos</h1>
+    <h:body styleClass="body" id="body" style="overflow: hidden" onclick="ver()">
+        <ui:decorate template="/WEB-INF/resources/template/header.xhtml"></ui:decorate>
+        <div id="about_Background" style="width: 100%">
+            <video style="min-width: 100%" id="about_Background_Resource" autoplay="autoplay" AutoplayAllowed="true" AutoplayAllowlist="true" loop="true">
+                <source src="#{resource['videos:about.mp4']}" type="video/mp4"></source>
+            </video>
+        </div>
+        <h:outputScript library="js" name="efects.js"/>
     </h:body>
 </html>

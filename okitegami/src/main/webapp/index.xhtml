@@ -5,6 +5,7 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="/okitegami/faces/jsfcrud.css" />
         <link rel="icon" href="#{resource['images:icon.jpg']}"/>
         <h:outputStylesheet library="css" name="header.css"/>
         <h:outputScript library="js" name="efects.js" />
@@ -209,17 +210,21 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWK0KKKKKKKKKKKKKKKKKKKKKKK000000000OOOOOOO
                 <div class="TextBox1">
                     <h1 id="titulo">Titulo</h1>
                     <p>hfgzfjkhgjksdlahfgljkhswfkjhdfakljshdflkjhdsfkjhflkhdsfkuhdsjklfhdskljfhlisuj
-                       dhfkjsdhfkljhdsjkfhsdkjfhdjkslhfkjdhsfljkshadfjkhsdfjklhfkjhsdfjkhdfjkhdsfkjh
-                       skjfhlaskdjhfaksjlfhkjsdhfkjlhf</p>
+                        dhfkjsdhfkljhdsjkfhsdkjfhdjkslhfkjdhsfljkshadfjkhsdfjklhfkjhsdfjkhdfjkhdsfkjh
+                        skjfhlaskdjhfaksjlfhkjsdhfkjlhf</p>
                 </div>
             </div>
             <div class="Box" id="box2">
                 <h:button value="Sing in" outcome="pages/loging/loging.xhtml?faces-redirect=true"></h:button>
                 <h:button value="Sing up" outcome="pages/register/newUser.xhtml?faces-redirect=true" disabled="true"></h:button>
                 <h:link outcome="pages/loging/loging?faces-redirect=true" value="loging" styleClass="link"></h:link>
-                <button><a href="pages/loging/login.xhtml">Loging</a></button>
+                    <button><a href="pages/loging/login.xhtml">Loging</a></button>
                 <h:graphicImage library="images" name="error_404.png" alt="gato2" onclick="index.jsp"></h:graphicImage>
+                </div>
             </div>
-        </div>
+        <h:form>
+            <h:commandLink action="#{users.listSetup}" value="Show All Users Items"/>
+        </h:form>
     </h:body>
+
 </html>

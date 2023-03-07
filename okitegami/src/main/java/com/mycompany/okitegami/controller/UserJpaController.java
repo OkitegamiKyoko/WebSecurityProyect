@@ -8,6 +8,8 @@ import com.mycompany.okitegami.controller.exceptions.NonexistentEntityException;
 import com.mycompany.okitegami.controller.exceptions.RollbackFailureException;
 import java.io.Serializable;
 import java.util.List;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
@@ -87,6 +89,11 @@ public class UserJpaController implements Serializable {
                 em.close();
             }
         }
+    }
+    
+    public void delete(Users user) throws Exception{
+        user.setStatus(0);
+        edit(user);
     }
 
     public void destroy(int id) throws NonexistentEntityException, RollbackFailureException, Exception {

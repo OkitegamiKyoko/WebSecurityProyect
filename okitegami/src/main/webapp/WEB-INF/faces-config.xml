@@ -23,6 +23,8 @@
               xmlns="http://xmlns.jcp.org/xml/ns/javaee"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd">
+    <!--Pages Server-->
+    <!--Index-->
     <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
@@ -50,6 +52,38 @@
             <to-view-id>/pages/error/error_401.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <!--About-->
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>register</from-outcome>
+            <to-view-id>/pages/register/register.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>About</from-outcome>
+            <to-view-id>/pages/about/about.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>users</from-outcome>
+            <to-view-id>/pages/users/users.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>userEdit</from-outcome>
+            <from-action>#{userController.edit(user)}</from-action>
+            <to-view-id>/pages/users/userEdit.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>loging</from-outcome>
+            <to-view-id>/pages/loging/loging.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <!--Errores-->
+    <!--Error 404-->
     <navigation-rule>
         <from-view-id>/pages/error/error_404.xhtml</from-view-id>
         <navigation-case>
@@ -73,6 +107,7 @@
             <to-view-id>/pages/register/register.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <!--Error 501-->
     <navigation-rule>
         <from-view-id>/pages/error/error_501.xhtml</from-view-id>
         <navigation-case>
@@ -80,6 +115,7 @@
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <!--Error 500-->
     <navigation-rule>
         <from-view-id>/pages/error/error_500.xhtml</from-view-id>
         <navigation-case>
@@ -99,6 +135,7 @@
             <to-view-id>/pages/about/about.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <!--Error 403-->
     <navigation-rule>
         <from-view-id>/pages/error/error_403.xhtml</from-view-id>
         <navigation-case>
@@ -110,6 +147,7 @@
             <to-view-id>/pages/loging/loging.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <!--Error 401-->
     <navigation-rule>
         <from-view-id>/pages/error/error_401.xhtml</from-view-id>
         <navigation-case>
@@ -121,6 +159,8 @@
             <to-view-id>/pages/loging/loging.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <!--User Pages-->
+    <!--Register-->
     <navigation-rule>
         <from-view-id>/pages/register/register.xhtml</from-view-id>
         <navigation-case>
@@ -140,6 +180,7 @@
             <to-view-id>/pages/error/error_401.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <!--Loging-->
     <navigation-rule>
         <from-view-id>/pages/loging/loging.xhtml</from-view-id>
         <navigation-case>
@@ -147,7 +188,7 @@
             <to-view-id>/pages/register/register.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>about</from-outcome>
+            <from-outcome>About</from-outcome>
             <to-view-id>/pages/about/about.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
@@ -163,17 +204,7 @@
             <to-view-id>/pages/error/error_404.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
-    <navigation-rule>
-        <from-view-id>/pages/about/about.xhtml</from-view-id>
-        <navigation-case>
-            <from-outcome>register</from-outcome>
-            <to-view-id>/pages/register/register.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>About</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
-        </navigation-case>
-    </navigation-rule>
+    <!--Table-->
     <navigation-rule>
         <from-view-id>/pages/users/users.xhtml</from-view-id>
         <navigation-case>
