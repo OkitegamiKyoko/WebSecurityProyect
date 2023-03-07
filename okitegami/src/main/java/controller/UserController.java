@@ -23,7 +23,7 @@ import modelos.Users;
 @ApplicationScoped
 public class UserController implements Serializable {
     public static final long serialVersionUID=1L;
-    private Users user, userEdit;
+    private Users user;
     @EJB
     private UserFacade uf;
     
@@ -76,5 +76,10 @@ public class UserController implements Serializable {
     public String edit(Users user){
         this.user=user;
         return "userEdit";
+    }
+    
+    public String actualizar(Users user){
+        this.uf.edit(user);
+        return "users";
     }
 }
