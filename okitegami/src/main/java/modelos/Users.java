@@ -5,6 +5,10 @@
 package modelos;
 
 import java.io.Serializable;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,6 +28,7 @@ import javax.persistence.TemporalType;
 @Table (name="users")
 @NamedQueries(value={
     @NamedQuery(name="Users.findByEmail",query="SELECT u FROM Users u WHERE u.email = :email")
+    //@NamedQuery(name="Users.insert",query="INSERT INTO Users u (u.name,u.email,u.password,u.date) VALUES (:name,:email,:password,:date)")
 })
 public class Users implements Serializable{
     
@@ -31,13 +36,15 @@ public class Users implements Serializable{
     
     @Id
     @GeneratedValue (strategy=GenerationType.IDENTITY)
-    @Column(unique=true, nullable=false)
-    private int id;
+    @Column(unique=true, nullable=true)
+    private int id=0;
     @Column(nullable=false)
     private String name,email,password;
-    private int status;
-    //@Temporal(TemporalType.DATE)
-
+    private int status=1;
+    @Column(nullable=false)
+    @Temporal(TemporalType.DATE)
+    private Date date_ingreso = new Date();
+    
     public int getId() {
         return id;
     }
@@ -58,6 +65,10 @@ public class Users implements Serializable{
         return status;
     }
 
+    public Date getDate_ingreso() {
+        return date_ingreso;
+    }
+    
     public void setId(int id) {
         this.id = id;
     }
@@ -78,6 +89,16 @@ public class Users implements Serializable{
         this.status = status;
     }
 
+    public void setDate_ingreso(Date date_ingreso) {
+        Calendar c = new GregorianCalendar();
+        //SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        //fecha=sdf.format(date_ingreso);
+        //c.setTime(date_ingreso);
+        //fecha=""+c.get(Calendar.DAY_OF_MONTH)+"/"+c.get(Calendar.MONTH)+"/"+c.get(Calendar.YEAR);
+        //date=""+date_ingreso.toString();
+        this.date_ingreso = date_ingreso;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 5;
@@ -102,7 +123,20 @@ public class Users implements Serializable{
 
     @Override
     public String toString() {
-        return "user{" + "id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + '}';
+        return "Users{" + "id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", status=" + status + ", date_ingreso=" + date_ingreso + '}';
     }
-    
+    public void datos(){
+        /*Calendar c = new GregorianCalendar();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String fecha=sdf.format(date_ingreso);
+        c.get(Calendar.DAY_OF_MONTH);
+        System.out.println("[31mfecha= "+fecha);*/
+        System.out.println(toString());
+    }
+    public String convertirFechas(){
+        Calendar c = new GregorianCalendar();
+        c.setTime(date_ingreso);
+        String date_ingreso;
+        return date_ingreso=""+c.get(Calendar.DAY_OF_MONTH)+"/"+c.get(Calendar.MONTH)+"/"+c.get(Calendar.YEAR);
+    }
 }

@@ -5,38 +5,37 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
     <h:head>
-        <title>Okitegami | User edit</title>
+        <title>Okitegami | Edit user</title>
         <link rel="icon" href="#{resource['images:icon.jpg']}"/>
+        <h:outputStylesheet library="css" name="header.css"/>
+        <h:outputScript library="js" name="efects.js" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
     </h:head>
-    <h:body styleClass="body">
+     <h:body styleClass="body">
         <ui:decorate template="/WEB-INF/resources/template/header.xhtml">
             <ui:param name="top" value="top"></ui:param>
         </ui:decorate>
         <div class="main_form">
             <div class="formulario">
             <h:form styleClass="loging" enctype="multipart/form-data">
-                <h1 class="titulo_form h1">Actualizar Datos</h1>
+                <h1 class="titulo_form h1">Editar usuario</h1>
                 <h:outputLabel styleClass="user_label " value="Nombre de usuario" for="user"></h:outputLabel>
-                <h:inputText styleClass="user_input form-control" id="userName" requiredMessage="hola" value="#{userController.userEdit.name}"></h:inputText>
+                <h:inputText styleClass="user_input form-control" id="userName" requiredMessage="hola" value="#{user.name}"></h:inputText>
                 <h:outputLabel styleClass="user_label " value="Foto de usuario" for="user"></h:outputLabel>
                 <h:inputFile styleClass="inputFile"></h:inputFile>
                 <h:outputLabel styleClass="user_label " value="Usuario" for="user"></h:outputLabel>
-                <h:inputText styleClass="user_input form-control" id="user" requiredMessage="hola" pt:placeholder="correo@example.com" value="#{userController.userEdit.email}"></h:inputText>
+                <h:inputText styleClass="user_input form-control" id="user" requiredMessage="hola" pt:placeholder="correo@example.com"></h:inputText>
                 <h:outputLabel styleClass="password_label " value="Contraseña" for="password"></h:outputLabel>
-                <h:inputSecret styleClass="password_input form-control" id="password" pt:placeholder="password" value="#{userController.userEdit.password}" redisplay="true"></h:inputSecret>
+                <h:inputSecret styleClass="password_input form-control" id="password" pt:placeholder="password" value="#{user.password}"></h:inputSecret>
                 <h:outputLabel styleClass="password_label " value="Confirmar contraseña" for="passwordConfirm"></h:outputLabel>
-                <h:inputText styleClass="password_input form-control" id="passwordConfirm" pt:placeholder="password" value="#{userController.userEdit.password}" ></h:inputText>
+                <h:inputSecret styleClass="password_input form-control" id="passwordConfirm" pt:placeholder="password" value="#{user.password}"></h:inputSecret>
                 <h:outputLabel styleClass="password_label " value="Fecha de nacimiento" for="dataUser"></h:outputLabel>
                 <input class="password_input form-control" id="dateUser" type="date"></input>
                 <div class="botones_form">
-                    <h:button value="Cancelar" outcome="register" styleClass="btn btn-sucess"></h:button>
-                    <h:commandButton value="Guardar" action="#{userController.actualizar(userController.user)}" styleClass="btn btn-primary"></h:commandButton>
+                    <h:commandButton value="Guardar" type="summit" styleClass="btn btn-success"></h:commandButton>
+                    <h:button value="Cancelar" styleClass="btn btn-primary" onclick="window.history.back();"></h:button>
                 </div>
             </h:form>
-            <div class="botones_form navegation_page_button btn">
-                <button onclick="window.history.back();" title="Volver" class="btn btn-dark">Volver</button>
-            </div>
         </div>
         </div>
     </h:body>

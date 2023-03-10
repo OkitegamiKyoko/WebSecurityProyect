@@ -71,11 +71,13 @@
         <navigation-case>
             <from-outcome>users</from-outcome>
             <from-action>#{userController.actualizar(userController.user)}</from-action>
+            <redirect>true</redirect>
             <to-view-id>/pages/users/users.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>userEdit</from-outcome>
             <from-action>#{userController.edit(user)}</from-action>
+            <redirect>true</redirect>
             <to-view-id>/pages/users/userEdit.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
@@ -174,6 +176,8 @@
         </navigation-case>
         <navigation-case>
             <from-outcome>index</from-outcome>
+            <from-action>#{userController.create()}</from-action>
+            <redirect>true</redirect>
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
@@ -194,6 +198,7 @@
         </navigation-case>
         <navigation-case>
             <from-outcome>index</from-outcome>
+            <redirect>true</redirect>
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>

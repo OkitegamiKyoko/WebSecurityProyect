@@ -15,23 +15,23 @@
         </ui:decorate>
         <div class="main_form">
             <div class="formulario">
-            <h:form styleClass="loging" enctype="multipart/form-data">
+                <h:form styleClass="loging" enctype="multipart/form-data" accept="index">
                 <h1 class="titulo_form h1">Register</h1>
                 <h:outputLabel styleClass="user_label " value="Nombre de usuario" for="user"></h:outputLabel>
-                <h:inputText styleClass="user_input form-control" id="userName" requiredMessage="hola"></h:inputText>
+                <h:inputText styleClass="user_input form-control" id="userName" requiredMessage="hola" value="#{userController.user.name}"></h:inputText>
                 <h:outputLabel styleClass="user_label " value="Foto de usuario" for="user"></h:outputLabel>
                 <h:inputFile styleClass="inputFile"></h:inputFile>
                 <h:outputLabel styleClass="user_label " value="Usuario" for="user"></h:outputLabel>
-                <h:inputText styleClass="user_input form-control" id="user" requiredMessage="hola" pt:placeholder="correo@example.com"></h:inputText>
+                <h:inputText styleClass="user_input form-control" id="user" requiredMessage="hola" pt:placeholder="correo@example.com" value="#{userController.user.email}"></h:inputText>
                 <h:outputLabel styleClass="password_label " value="Contraseña" for="password"></h:outputLabel>
-                <h:inputSecret styleClass="password_input form-control" id="password" pt:placeholder="password"></h:inputSecret>
+                <h:inputSecret styleClass="password_input form-control" id="password" pt:placeholder="password" value="#{userController.user.password}"></h:inputSecret>
                 <h:outputLabel styleClass="password_label " value="Confirmar contraseña" for="passwordConfirm"></h:outputLabel>
-                <h:inputSecret styleClass="password_input form-control" id="passwordConfirm" pt:placeholder="password"></h:inputSecret>
+                <h:inputSecret styleClass="password_input form-control" id="passwordConfirm" pt:placeholder="password" value="#{userController.user.password}"></h:inputSecret>
                 <h:outputLabel styleClass="password_label " value="Fecha de nacimiento" for="dataUser"></h:outputLabel>
-                <input class="password_input form-control" id="dateUser" type="date"></input>
+                <input class="password_input form-control" id="dateUser" type="date" value="#{userController.user.date_ingreso}"></input>
                 <div class="botones_form">
-                    <h:commandButton value="Iniciar" type="summit" styleClass="btn btn-success"></h:commandButton>
-                    <h:button value="Registrar" outcome="register" styleClass="btn btn-primary"></h:button>
+                    <h:button value="Iniciar" outcome="loging" styleClass="btn btn-success"></h:button>
+                    <h:commandButton value="Registrar" action="#{userController.create()}" styleClass="btn btn-primary"></h:commandButton>
                 </div>
             </h:form>
             <div class="botones_form navegation_page_button btn">

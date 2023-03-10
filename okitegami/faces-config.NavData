@@ -2,16 +2,16 @@
 <Scene Scope="Project" version="2">
     <Scope Scope="Faces Configuration Only"/>
     <Scope Scope="Project">
+        <Node id="pages/error/error_401.xhtml" x="650" y="300" zoom="true"/>
         <Node id="index.xhtml" x="400" y="300" zoom="true"/>
         <Node id="pages/users/users.xhtml" x="650" y="450" zoom="true"/>
         <Node id="pages/error/error_404.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="pages/register/register.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="pages/error/error_501.xhtml" x="400" y="600" zoom="true"/>
         <Node id="*" x="1260" y="411" zoom="true"/>
         <Node id="pages/about/about.xhtml" x="400" y="150" zoom="true"/>
-        <Node id="pages/error/error_500.xhtml" x="150" y="450" zoom="true"/>
-        <Node id="pages/error/error_401.xhtml" x="650" y="300" zoom="true"/>
-        <Node id="pages/error/error_501.xhtml" x="400" y="600" zoom="true"/>
-        <Node id="pages/register/register.xhtml" x="150" y="750" zoom="true"/>
         <Node id="pages/loging/loging.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="pages/error/error_500.xhtml" x="150" y="450" zoom="true"/>
         <Node id="pages/error/error_403.xhtml" x="650" y="150" zoom="true"/>
     </Scope>
     <Scope Scope="All Faces Configurations"/>

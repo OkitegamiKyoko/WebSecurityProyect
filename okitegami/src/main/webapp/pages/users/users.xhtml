@@ -25,6 +25,7 @@
                     </h:form>
                 </div>
                 <div class="fondo_datos" id="fondo_table">
+                    <h:outputText value="#"></h:outputText>
                     <h:dataTable class="tabla" value="#{userController.read}" var="user">
                         <h:column>
                             <f:facet name="header">
@@ -54,10 +55,10 @@
                             <f:facet name="header">
                                 <h:outputText value="ACTIONS"></h:outputText>
                             </f:facet>
-                            <h:form>
+                            <h:form style="display: flex; justify-content: space-evenly">
                                 <h:commandButton value="Edit" action="#{userController.edit(user)}" ></h:commandButton>
-                                <h:commandButton value="Delete" action="#{userController.delete(user)}" ></h:commandButton>
-                                <h:commandButton value="Active" action="#{userController.active(user)}" ></h:commandButton>
+                                <h:commandButton value="Desactive" action="#{userController.desactive(user)}"  rendered="#{user.status==1}"></h:commandButton>
+                                <h:commandButton value="Reactive" action="#{userController.reactive(user)}" rendered="#{user.status==0}"></h:commandButton>
                             </h:form>
                         </h:column>
                     </h:dataTable>

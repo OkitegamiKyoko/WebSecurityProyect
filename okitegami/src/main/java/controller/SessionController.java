@@ -46,11 +46,7 @@ public class SessionController extends UserController implements Serializable {
     }
     public boolean exist(){
         if (session!=null) {
-            if(session.getEmail()==null){
-                return false;
-            }else{
-                return true;
-            }
+            return session.getEmail() != null;
         }else{
             return false;
         }

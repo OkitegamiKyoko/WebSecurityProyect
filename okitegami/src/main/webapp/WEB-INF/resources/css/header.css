@@ -315,7 +315,7 @@ ul{
  Unicamente Habilitar en produccion o para revision de interfaces
 */
 #javax_faces_developmentstage_messages{
-    
+    display: none;
 }
 .main{
     display: flex;

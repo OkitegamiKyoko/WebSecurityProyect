@@ -23,12 +23,19 @@ import modelos.Users;
 @ApplicationScoped
 public class UserController implements Serializable {
     public static final long serialVersionUID=1L;
+    private List<Users> list;
     private Users user;
     @EJB
     private UserFacade uf;
     
     public List<Users> getRead(){
-        return this.uf.findAll();
+        list=this.uf.findAll();
+        System.out.println(list.size());
+        return list;
+    }
+    
+    public boolean isPopulated(){
+        return !list.isEmpty();
     }
     
     public void create(){
@@ -58,10 +65,16 @@ public class UserController implements Serializable {
         user.setStatus(0);
         uf.edit(user);
     }
-    public void active(Users user){
+    public void reactive(Users user){
         user.setStatus(1);
         uf.edit(user);
     }
+    
+    public void desactive(Users user){
+        user.setStatus(0);
+        uf.edit(user);
+    }
+    
     public int count(){
         return this.uf.count();
     }
@@ -81,5 +94,10 @@ public class UserController implements Serializable {
     public String actualizar(Users user){
         this.uf.edit(user);
         return "users";
+    }
+    
+    public boolean userStatus(int status){
+        System.out.println("Status: "+status);
+        return status==1;
     }
 }
