@@ -5,6 +5,7 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>Internal Server Error | Okitegami</title>
+        <link rel="icon" href="#{resource['images:icon.jpg']}"/>
         <style>
             .main{
                 background-image: url("#{resource['images/error_500.png']}");
@@ -17,8 +18,6 @@
         </style>
     </h:head>
     <h:body styleClass="body_error_500">
-        <ui:decorate template="/WEB-INF/resources/template/header.xhtml">
-            <ui:param name="top" value="top"></ui:param>
-        </ui:decorate>
+        <ui:decorate template="/WEB-INF/resources/template/header.xhtml"></ui:decorate>
     </h:body>
 </html>

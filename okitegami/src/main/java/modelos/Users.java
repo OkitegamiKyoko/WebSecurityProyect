@@ -6,7 +6,6 @@ package modelos;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.persistence.Column;
@@ -19,6 +18,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Email;
 
 /**
  *
@@ -27,19 +27,20 @@ import javax.persistence.TemporalType;
 @Entity
 @Table (name="users")
 @NamedQueries(value={
-    @NamedQuery(name="Users.findByEmail",query="SELECT u FROM Users u WHERE u.email = :email")
-    //@NamedQuery(name="Users.insert",query="INSERT INTO Users u (u.name,u.email,u.password,u.date) VALUES (:name,:email,:password,:date)")
-})
+    @NamedQuery(name="Users.findByEmail",query="SELECT u FROM Users u WHERE u.email = :email")})
 public class Users implements Serializable{
     
     public static final long serialVersionUID=1L;
     
     @Id
     @GeneratedValue (strategy=GenerationType.IDENTITY)
-    @Column(unique=true, nullable=true)
-    private int id=0;
+    @Column(unique=true, nullable=false)
+    private int id;
     @Column(nullable=false)
-    private String name,email,password;
+    private String name,password;
+    @Email(message="Correo no valido")
+    @Column(unique=true, nullable=false)
+    private String email;
     private int status=1;
     @Column(nullable=false)
     @Temporal(TemporalType.DATE)
@@ -90,13 +91,11 @@ public class Users implements Serializable{
     }
 
     public void setDate_ingreso(Date date_ingreso) {
-        Calendar c = new GregorianCalendar();
-        //SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        //fecha=sdf.format(date_ingreso);
-        //c.setTime(date_ingreso);
-        //fecha=""+c.get(Calendar.DAY_OF_MONTH)+"/"+c.get(Calendar.MONTH)+"/"+c.get(Calendar.YEAR);
-        //date=""+date_ingreso.toString();
-        this.date_ingreso = date_ingreso;
+        try{
+            this.date_ingreso = date_ingreso;
+        }catch(Exception e){
+            System.out.println("Error: "+e.getMessage());
+        }
     }
     
     @Override

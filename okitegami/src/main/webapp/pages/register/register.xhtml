@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Register</title>
         <link rel="icon" href="#{resource['images:icon.jpg']}"/>
@@ -16,28 +17,38 @@
         <div class="main_form">
             <div class="formulario">
                 <h:form styleClass="loging" enctype="multipart/form-data" accept="index">
-                <h1 class="titulo_form h1">Register</h1>
-                <h:outputLabel styleClass="user_label " value="Nombre de usuario" for="user"></h:outputLabel>
-                <h:inputText styleClass="user_input form-control" id="userName" requiredMessage="hola" value="#{userController.user.name}"></h:inputText>
-                <h:outputLabel styleClass="user_label " value="Foto de usuario" for="user"></h:outputLabel>
-                <h:inputFile styleClass="inputFile"></h:inputFile>
-                <h:outputLabel styleClass="user_label " value="Usuario" for="user"></h:outputLabel>
-                <h:inputText styleClass="user_input form-control" id="user" requiredMessage="hola" pt:placeholder="correo@example.com" value="#{userController.user.email}"></h:inputText>
-                <h:outputLabel styleClass="password_label " value="Contraseña" for="password"></h:outputLabel>
-                <h:inputSecret styleClass="password_input form-control" id="password" pt:placeholder="password" value="#{userController.user.password}"></h:inputSecret>
-                <h:outputLabel styleClass="password_label " value="Confirmar contraseña" for="passwordConfirm"></h:outputLabel>
-                <h:inputSecret styleClass="password_input form-control" id="passwordConfirm" pt:placeholder="password" value="#{userController.user.password}"></h:inputSecret>
-                <h:outputLabel styleClass="password_label " value="Fecha de nacimiento" for="dataUser"></h:outputLabel>
-                <input class="password_input form-control" id="dateUser" type="date" value="#{userController.user.date_ingreso}"></input>
-                <div class="botones_form">
-                    <h:button value="Iniciar" outcome="loging" styleClass="btn btn-success"></h:button>
-                    <h:commandButton value="Registrar" action="#{userController.create()}" styleClass="btn btn-primary"></h:commandButton>
+                    <h1 class="titulo_form h1">Register</h1>
+                    <h:graphicImage value="#{userController.image}" style="width: 200px; height: 200px; border-radius: 50%; display: flex;align-self: center"></h:graphicImage>
+                    <h:outputLabel styleClass="user_label " value="Nombre de usuario" for="user"></h:outputLabel>
+                    <h:inputText styleClass="user_input form-control" id="userName" value="#{userController.userNew.name}" autocomplete="false" required="true" requiredMessage="Campo requerido"></h:inputText>
+                    <h:message for="userName" style="color: red"></h:message>
+                    <h:outputLabel styleClass="user_label " value="Foto de usuario" for="user"></h:outputLabel>
+                    <h:inputFile styleClass="inputFile"></h:inputFile>
+                    <h:outputLabel styleClass="user_label " value="Usuario" for="user"></h:outputLabel>
+                    <h:inputText styleClass="user_input form-control" id="userEmail" pt:placeholder="correo@example.com" value="#{userController.userNew.email}" autocomplete="false" required="true" requiredMessage="Campo requerido"></h:inputText>
+                    <h:message for="userEmail" style="color: red"></h:message>
+                    <h:outputLabel styleClass="password_label " value="Contraseña" for="password"></h:outputLabel>
+                    <h:inputSecret styleClass="password_input form-control" id="userPassword" pt:placeholder="password" value="#{userController.userNew.password}" autocomplete="false" required="true" requiredMessage="Campo requerido" validatorMessage="Contraseña mayor a 32 o menor a 8 caracteres">
+                        <f:validateLength for="userPassword" minimum="8" maximum="32"></f:validateLength>
+                    </h:inputSecret>
+                    <h:message for="userPassword" style="color: red"></h:message>
+                    <h:outputLabel styleClass="password_label " value="Confirmar contraseña" for="passwordConfirm"></h:outputLabel>
+                    <h:inputSecret styleClass="password_input form-control" id="passwordConfirm" pt:placeholder="password" value="#{userController.userNew.password}" autocomplete="false" required="true" requiredMessage="Campo requerido"></h:inputSecret>
+                    <h:message for="passwordConfirm" style="color: red"></h:message>
+                    <h:outputLabel styleClass="password_label " value="Fecha de nacimiento" for="dataUser"></h:outputLabel>
+                    <h:inputText class="password_input form-control" id="dateUser" value="#{userController.userNew.date_ingreso}" pt:placeholder="09/10/14" autocomplete="true" required="true" requiredMessage="Campo requerido" label="Fecha">
+                        <f:convertDateTime pattern="dd/MM/yyyy" type="date"></f:convertDateTime>
+                    </h:inputText>
+                    <h:message for="dateUser" style="color: red"></h:message>
+                    <div class="botones_form">
+                        <h:button value="Iniciar" outcome="loging" styleClass="btn btn-success"></h:button>
+                        <h:commandButton value="Registrar" action="#{userController.create()}" styleClass="btn btn-primary"></h:commandButton>
+                    </div>
+                </h:form>
+                <div class="botones_form navegation_page_button btn">
+                    <button onclick="window.history.back();" title="Volver" class="btn btn-dark">Volver</button>
                 </div>
-            </h:form>
-            <div class="botones_form navegation_page_button btn">
-                <button onclick="window.history.back();" title="Volver" class="btn btn-dark">Volver</button>
             </div>
-        </div>
         </div>
     </h:body>
 </html>

@@ -13,7 +13,7 @@
                         <c:if test="#{sessionController.session.nivel==1}">
                             <li><h:outputText value="#{sessionController.session.email}"></h:outputText></li>
                             <li><h:link outcome="users" styleClass="TextLinkMenu">Usuarios</h:link></li>
-                            <li><h:link styleClass="TextLinkMenu">Conductores</h:link></li>
+                            <li><h:link outcome="departments" styleClass="TextLinkMenu">Departamentos</h:link></li>
                             <li><h:link styleClass="TextLinkMenu">Limpieza</h:link></li>
                             <li><h:link styleClass="TextLinkMenu">Gatos</h:link></li>
                         </c:if>

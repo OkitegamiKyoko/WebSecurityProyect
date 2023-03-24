@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Okitegami | User edit</title>
         <link rel="icon" href="#{resource['images:icon.jpg']}"/>
@@ -18,19 +19,27 @@
             <h:form styleClass="loging" enctype="multipart/form-data">
                 <h1 class="titulo_form h1">Actualizar Datos</h1>
                 <h:outputLabel styleClass="user_label " value="Nombre de usuario" for="user"></h:outputLabel>
-                <h:inputText styleClass="user_input form-control" id="userName" requiredMessage="hola" value="#{userController.userEdit.name}"></h:inputText>
+                <h:inputText styleClass="user_input form-control" id="userName" requiredMessage="hola" value="#{userController.user.name}"></h:inputText>
                 <h:outputLabel styleClass="user_label " value="Foto de usuario" for="user"></h:outputLabel>
-                <h:inputFile styleClass="inputFile"></h:inputFile>
+                <h:inputFile styleClass="inputFile" value="#{userController.image}"></h:inputFile>
                 <h:outputLabel styleClass="user_label " value="Usuario" for="user"></h:outputLabel>
-                <h:inputText styleClass="user_input form-control" id="user" requiredMessage="hola" pt:placeholder="correo@example.com" value="#{userController.userEdit.email}"></h:inputText>
+                <h:inputText styleClass="user_input form-control" id="user" requiredMessage="hola" pt:placeholder="correo@example.com" value="#{userController.user.email}"></h:inputText>
                 <h:outputLabel styleClass="password_label " value="Contraseña" for="password"></h:outputLabel>
-                <h:inputSecret styleClass="password_input form-control" id="password" pt:placeholder="password" value="#{userController.userEdit.password}" redisplay="true"></h:inputSecret>
+                <h:inputSecret styleClass="password_input form-control" id="password" pt:placeholder="password" value="#{userController.user.password}" redisplay="true" label="Password">
+                    <f:validateLength minimum="8" maximum="32"></f:validateLength>
+                </h:inputSecret>
+                <h:message for="password"></h:message>
                 <h:outputLabel styleClass="password_label " value="Confirmar contraseña" for="passwordConfirm"></h:outputLabel>
-                <h:inputText styleClass="password_input form-control" id="passwordConfirm" pt:placeholder="password" value="#{userController.userEdit.password}" ></h:inputText>
+                <h:inputText styleClass="password_input form-control" id="passwordConfirm" pt:placeholder="password" value="#{userController.passwordConfirm}">
+                    <f:validateLength minimum="8" maximum="32"></f:validateLength>
+                </h:inputText>
                 <h:outputLabel styleClass="password_label " value="Fecha de nacimiento" for="dataUser"></h:outputLabel>
-                <input class="password_input form-control" id="dateUser" type="date"></input>
+                <h:inputText class="password_input form-control" id="dateUser" value="#{userController.user.date_ingreso}" required="true" requiredMessage="Campo requerido" label="Fecha" validatorMessage="Error:">
+                    <f:convertDateTime pattern="dd/MM/yyyy" type="date"></f:convertDateTime>
+                </h:inputText>
+                <h:message for="dateUser"></h:message>
                 <div class="botones_form">
-                    <h:button value="Cancelar" outcome="register" styleClass="btn btn-sucess"></h:button>
+                    <h:button value="Cancelar" outcome="users" styleClass="btn btn-sucess"></h:button>
                     <h:commandButton value="Guardar" action="#{userController.actualizar(userController.user)}" styleClass="btn btn-primary"></h:commandButton>
                 </div>
             </h:form>

@@ -65,6 +65,7 @@
         </navigation-case>
         <navigation-case>
             <from-outcome>index</from-outcome>
+            <from-action>#{userController.create()}</from-action>
             <to-view-id>/index.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
@@ -79,6 +80,10 @@
             <from-action>#{userController.edit(user)}</from-action>
             <redirect>true</redirect>
             <to-view-id>/pages/users/userEdit.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>departments</from-outcome>
+            <to-view-id>/pages/departments/departments.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>loging</from-outcome>
@@ -218,12 +223,48 @@
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
+            <from-outcome>details</from-outcome>
+            <to-view-id>/pages/users/userDetails.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
             <from-outcome>users</from-outcome>
             <to-view-id>/pages/users/users.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>About</from-outcome>
             <to-view-id>/pages/about/about.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <!--Departments Pages-->
+    <!--Principal-->
+    <navigation-rule>
+        <from-view-id>/pages/departments/departments.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>About</from-outcome>
+            <to-view-id>/pages/about/about.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>users</from-outcome>
+            <redirect>true</redirect>
+            <to-view-id>/pages/users/users.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>new</from-outcome>
+            <to-view-id>/pages/departments/addDepartments.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>edit</from-outcome>
+            <redirect>true</redirect>
+            <to-view-id>/pages/departments/editDepartment.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>details</from-outcome>
+            <to-view-id>/pages/departments/detailsDepartment.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>

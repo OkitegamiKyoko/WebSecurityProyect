@@ -10,8 +10,8 @@
     </h:head>
     <h:body styleClass="body" id="body" style="overflow: hidden" onclick="ver()">
         <ui:decorate template="/WEB-INF/resources/template/header.xhtml"></ui:decorate>
-        <div id="about_Background" style="width: 100%">
-            <video style="min-width: 100%" id="about_Background_Resource" autoplay="autoplay" AutoplayAllowed="true" AutoplayAllowlist="true" loop="true">
+        <div id="about_Background" style="width: 100%; height: 100%; display: flex; align-self: center">
+            <video style="width: 100%" id="about_Background_Resource" autoplay="autoplay" AutoplayAllowed="true" AutoplayAllowlist="true" loop="true">
                 <source src="#{resource['videos:about.mp4']}" type="video/mp4"></source>
             </video>
         </div>

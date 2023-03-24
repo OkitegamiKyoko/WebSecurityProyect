@@ -7,7 +7,7 @@
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
-        <title>Okitegami | Users</title>
+        <title>Okitegami | Departments</title>
         <link rel="icon" href="#{resource['images:icon.jpg']}"/>
     </h:head>
     <h:body styleClass="body" id="body">
@@ -17,48 +17,47 @@
         <div class="main">
             <div class="main_page">
                 <div class="fondo_datos" id="fondo_options">
-                    <h1 class="titulo_form h1">Usuarios</h1>
+                    <h1 class="titulo_form h1">Departamentos</h1>
                     <h:form>
                         <h:outputLabel value="Buscar"></h:outputLabel>
-                        <h:inputText pt:placeholder="Usuario"></h:inputText>
+                        <h:inputText pt:placeholder="Departamentos"></h:inputText>
                         <h:commandButton value="Buscar"></h:commandButton>
                     </h:form>
                 </div>
                 <div class="fondo_datos" id="fondo_table">
-                    <h:dataTable class="tabla" value="#{userController.read}" var="user">
+                    <h:dataTable class="tabla" value="#{departmentController.read}" var="department">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="ID"></h:outputText>
                             </f:facet>
-                                <h:outputText value="#{user.id}"></h:outputText>
+                                <h:outputText value="#{department.id}"></h:outputText>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="NAME"></h:outputText>
                             </f:facet>
-                            <h:outputText value="#{user.name}"></h:outputText>
+                            <h:outputText value="#{department.nombre}"></h:outputText>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="PASSWORD"></h:outputText>
+                                <h:outputText value="Descripcion"></h:outputText>
                             </f:facet>
-                            <h:outputText value="#{user.password}"></h:outputText>
+                            <h:outputText value="#{department.descripcion}"></h:outputText>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="STATUS"></h:outputText>
                             </f:facet>
-                            <h:outputText value="#{user.status}"></h:outputText>
+                            <h:outputText value="#{department.status}"></h:outputText>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="ACTIONS"></h:outputText>
                             </f:facet>
                             <h:form style="display: flex; justify-content: space-evenly">
-                                <h:commandButton value="Details" action="#{userController.details(user)}" ></h:commandButton>
-                                <h:commandButton value="Edit" action="#{userController.edit(user)}" ></h:commandButton>
-                                <h:commandButton value="Desactive" action="#{userController.desactive(user)}"  rendered="#{user.status==1}"></h:commandButton>
-                                <h:commandButton value="Reactive" action="#{userController.reactive(user)}" rendered="#{user.status==0}"></h:commandButton>
+                                <h:commandButton value="Edit" action="#{departmentController.edit(department)}" ></h:commandButton>
+                                <h:commandButton value="Desactive" action="#{departmentController.desactive(department)}"  rendered="#{department.status==1}"></h:commandButton>
+                                <h:commandButton value="Reactive" action="#{departmentController.reactive(department)}" rendered="#{department.status==0}"></h:commandButton>
                             </h:form>
                         </h:column>
                     </h:dataTable>
