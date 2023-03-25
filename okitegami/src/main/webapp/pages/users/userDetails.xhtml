@@ -6,7 +6,7 @@
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Okitegami | Edit user</title>
+        <title>Okitegami | Edit details</title>
         <link rel="icon" href="#{resource['images:icon.jpg']}"/>
         <h:outputStylesheet library="css" name="header.css"/>
         <h:outputScript library="js" name="efects.js" />
@@ -18,24 +18,32 @@
         </ui:decorate>
         <div class="main_form">
             <div class="formulario">
-            <h:form styleClass="loging" enctype="multipart/form-data">
+            <div class="detailsUser">
                 <h1 class="titulo_form h1">Detalles de usuario</h1>
-                <h:graphicImage value="#{userController.image}" style="width: 200px; height: 200px; border-radius: 50%; display: flex;align-self: center"></h:graphicImage>
-                <h:outputLabel styleClass="user_label " value="Nombre de usuario" for="user"></h:outputLabel>
-                <h:outputText styleClass="user_input form-control" id="userName" value="#{userController.user.name}"></h:outputText>
-                <h:outputLabel styleClass="user_label " value="Usuario" for="user"></h:outputLabel>
-                <h:outputText styleClass="user_input form-control" id="user" value="#{userController.user.email}"></h:outputText>
-                <h:outputLabel styleClass="password_label " value="Contraseña" for="password"></h:outputLabel>
-                <h:outputText styleClass="password_input form-control" id="password" pt:placeholder="password" value="#{userController.user.password}"></h:outputText>
-                <h:outputLabel styleClass="password_label " value="Fecha de nacimiento" for="dataUser"></h:outputLabel>
-                <h:outputText class="password_input form-control" id="dateUser" value="#{userController.user.date_ingreso}">
-                    <f:convertDateTime pattern="dd/MM/yyyy" type="date"></f:convertDateTime>
-                </h:outputText>
-                <div class="botones_form">
-                    <h:commandButton value="Editar" type="summit" styleClass="btn btn-success" action="#{userController.edit(userController.user)}"></h:commandButton>
-                    <h:button value="Volver" styleClass="btn btn-primary" onclick="window.history.back();"></h:button>
+                <div class="datosDetais">
+                    <div class="datosImage">
+                        <h:graphicImage value="#{userController.image}" style="width: 200px; height: 200px; border-radius: 50%; display: flex;align-self: center"></h:graphicImage>
+                    </div>
+                    <div class="datos">
+                        <h:outputLabel styleClass="user_label " value="Nombre de usuario" for="user"></h:outputLabel>
+                        <h:outputText styleClass="user_input form-control" id="userName" value="#{userController.user.name}"></h:outputText>
+                        <h:outputLabel styleClass="user_label " value="Correo" for="user"></h:outputLabel>
+                        <h:outputText styleClass="user_input form-control" id="user" value="#{userController.user.email}"></h:outputText>
+                        <h:outputLabel styleClass="user_label " value="Rol" for="user"></h:outputLabel>
+                        <h:outputText styleClass="user_input form-control" id="userRol" value="#{userController.user.name}"></h:outputText>
+                        <h:outputLabel styleClass="user_label " value="Estatus" for="user"></h:outputLabel>
+                        <h:outputText styleClass="user_input form-control" id="userStatus" value="#{userController.user.status}"></h:outputText>
+                        <h:outputLabel styleClass="password_label " value="Fecha de creación" for="dataUser"></h:outputLabel>
+                        <h:outputText class="password_input form-control" id="dateUser" value="#{userController.user.date_ingreso}">
+                            <f:convertDateTime pattern="dd/MM/yyyy" type="date"></f:convertDateTime>
+                        </h:outputText>
+                    </div>
                 </div>
-            </h:form>
+                <div class="botones_form">
+                    <h:button value="Editar" styleClass="btn btn-success" outcome="#{userController.edit(userController.user)}"></h:button>
+                    <button tittle="Volver" class="btn btn-dark" onclick="window.history.back();">Volver</button>
+                </div>
+            </div>
         </div>
         </div>
     </h:body>

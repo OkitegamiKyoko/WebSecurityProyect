@@ -12,7 +12,9 @@
         <div id="top" class="top">
             <ui:insert name="#{top}">
                 <div id="banner" class="banner">
-                    <div class="menu button" id="bt_menu_header" onclick="verMenu()"></div>
+                    <div class="menu button" id="bt_menu_header" onclick="verMenu()">
+                        <ui:decorate template="/WEB-INF/resources/template/menu.xhtml"/>
+                    </div>
                     <h:button styleClass="logo button" outcome="index"></h:button>
                     <div class="usuario">
                         <c:if test="#{sessionController.exist()==false}">
@@ -20,15 +22,13 @@
                             <h:button value="Ingresar" outcome="loging"  styleClass="iniciar button"></h:button>
                         </c:if>
                         <c:if test="#{sessionController.exist()}">
-                            <h:form>
-                                <h:commandButton value="Cerrar sesión" styleClass="registrar button" action="#{sessionController.close()}"></h:commandButton>
-                            </h:form>
+                            <h:graphicImage value="#{userController.image}" style="width: 55px; height: 55px; border-radius: 50%; display: flex;align-self: center" onclick="verMenuUser()"></h:graphicImage>
+                            <ui:decorate template="/WEB-INF/resources/template/menuUser.xhtml"/>
                         </c:if>
                     </div>
                 </div>
                 <div class="banner_background"></div>
             </ui:insert>
-            <ui:decorate template="/WEB-INF/resources/template/menu.xhtml"/>
         </div>
         <h:outputStylesheet library="css" name="header.css"/>
         <h:outputScript library="js" name="efects.js"/>

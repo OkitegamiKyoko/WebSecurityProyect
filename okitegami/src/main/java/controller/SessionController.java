@@ -6,7 +6,9 @@ package controller;
 
 import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
+import javax.servlet.http.HttpServletRequest;
 import modelos.Session;
 import modelos.Users;
 
@@ -30,6 +32,17 @@ public class SessionController extends UserController implements Serializable {
     public void setSession(Session session) {
         this.session = session;
     }
+
+    @Override
+    public Users getUser() {
+        return user;
+    }
+
+    @Override
+    public void setUser(Users user) {
+        this.user = user;
+    }
+    
     public String validarSession(){
         this.user=findByEmail(session.getEmail());
         if (user!=null) {
@@ -37,15 +50,19 @@ public class SessionController extends UserController implements Serializable {
                 session.setNivel(user.getStatus());                  //Cambiar status por nivel
                 return "index";
             }else{
+                session=null;
                 return "error_401";
             }
         }else{
+            user=null;
             session=null;
             return "error_403";
         }
     }
     public boolean exist(){
         if (session!=null) {
+            HttpServletRequest req = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
+            System.out.println(req.getSession().getId());
             return session.getEmail() != null;
         }else{
             return false;
@@ -53,6 +70,9 @@ public class SessionController extends UserController implements Serializable {
     }
     
     public String close(){
+        HttpServletRequest req = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
+        System.out.println(req.getSession().getId());
+        req.getSession().invalidate();
         session=null;
         user=null;
         return "index";

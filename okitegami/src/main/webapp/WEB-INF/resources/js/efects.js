@@ -14,6 +14,17 @@ function verMenu(){
         };
 };
 
+function verMenuUser(){
+    console.log(menuBtn);
+        if (document.getElementById("menu_web_user").getAttribute("style")==="display: block;") {
+            document.getElementById("menu_web_user").style="display:none;";
+            console.log("click_menu"+document.getElementById("menu_web_user").getAttribute("display"));
+        }else{
+            document.getElementById("menu_web_user").style="display:block;";
+            console.log("click_menu_visible : "+document.getElementById("menu_web_user").getAttribute("style"));
+        };
+};
+
 let script=document.createElement('script');
 
 function ver(){

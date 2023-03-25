@@ -26,7 +26,7 @@ import modelos.Users;
 public class UserController implements Serializable {
     public static final long serialVersionUID=1L;
     private List<Users> list;
-    private Users user,userNew,userDetails;
+    private Users userSession,userNew,userDetails;
     private String passwordConfirm;
     private String image;
     @EJB
@@ -52,7 +52,7 @@ public class UserController implements Serializable {
     }
 
     public void setUser(Users user) {
-        this.user = user;
+        this.userSession = user;
     }
 
     public void setUserNew(Users userNew) {
@@ -68,18 +68,18 @@ public class UserController implements Serializable {
     }
     
     public Users getUser() {
-        if (user==null) {
-            return this.user=new Users();
+        if (userSession==null) {
+            return this.userSession=new Users();
         }
-        return user;
+        return userSession;
     }
     
     public void setUserEdit(Users user) {
-        this.user = user;
+        this.userSession = user;
     }
 
     public Users getUserEdit() {
-        return user;
+        return userSession;
     }
     public void delete(Users user){
         user.setStatus(0);
@@ -99,7 +99,7 @@ public class UserController implements Serializable {
         return this.uf.count();
     }
     public Users find(Users user){
-        return this.user=this.uf.find(user);
+        return this.userSession=this.uf.find(user);
     }
     
     public Users findByEmail(String email){
@@ -108,7 +108,7 @@ public class UserController implements Serializable {
     
     public String edit(Users user){
         passwordConfirm=user.getPassword();
-        this.user=user;
+        this.userSession=user;
         return "userEdit";
     }
     
@@ -162,8 +162,7 @@ public class UserController implements Serializable {
     }
     
     public String details(Users user){
-        this.user=user;
-        System.out.println(userNew.toString());
+        this.userSession=user;
         return "details";
     }
 }

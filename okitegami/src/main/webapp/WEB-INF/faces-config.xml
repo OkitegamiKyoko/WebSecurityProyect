@@ -48,6 +48,12 @@
             <to-view-id>/pages/users/users.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
+            <from-outcome>details</from-outcome>
+            <from-action>#{userController.details(sessionController.user)}</from-action>
+            <redirect>true</redirect>
+            <to-view-id>/pages/users/userDetails.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
             <from-outcome>error_401</from-outcome>
             <to-view-id>/pages/error/error_401.xhtml</to-view-id>
         </navigation-case>
@@ -80,6 +86,12 @@
             <from-action>#{userController.edit(user)}</from-action>
             <redirect>true</redirect>
             <to-view-id>/pages/users/userEdit.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>details</from-outcome>
+            <from-action>#{userController.details(sessionController.user)}</from-action>
+            <redirect>true</redirect>
+            <to-view-id>/pages/users/userDetails.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>departments</from-outcome>
@@ -220,11 +232,16 @@
         <from-view-id>/pages/users/users.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>index</from-outcome>
+            <from-action>#{sessionController.close()}</from-action>
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>details</from-outcome>
             <to-view-id>/pages/users/userDetails.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>userEdit</from-outcome>
+            <to-view-id>/pages/users/userEdit.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>users</from-outcome>

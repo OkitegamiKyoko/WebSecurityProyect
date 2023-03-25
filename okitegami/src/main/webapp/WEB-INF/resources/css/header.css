@@ -23,7 +23,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     align-items: center;
     justify-content: space-between;
     z-index: 1000;
-    position: fixed;
+    position: relative;
     top: 0;
     background-color: rgba(0, 0, 0, 1);
     box-shadow: 0px 20px 30px 0px;
@@ -111,6 +111,7 @@ body{
     background-size: cover;
 }
 .logo{
+    border:0;
     width: 381px;
     height: 60px;
     align-self: center;
@@ -118,6 +119,8 @@ body{
     background-size: 100% 100%;
     background-repeat: no-repeat;
     justify-self: center;
+    position: absolute;
+    left: 40%;
 }
 .background{
     min-width: 100%;
@@ -128,6 +131,7 @@ body{
 .usuario{
     width: 300px;
     display: flex;
+    position: relative;
     justify-content: space-evenly;
 }
 .main{
@@ -200,6 +204,7 @@ body{
 }
 .user_input,.password_input{
     margin-top: 0px;
+    box-sizing: border-box;
 }
 .inputFile{
     margin-top: 10px;
@@ -274,9 +279,12 @@ p{
 #menu_web{
     display: none;
     z-index: 1000;
-    position:absolute;
+    position: absolute;
     background-color: white;
     padding: 10px;
+    top: 100%;
+    margin: 0px;
+    text-align: left;
 }
 .TextLinkMenu, li{
     text-decoration: none;
@@ -340,4 +348,38 @@ tr{
 }
 td{
     text-align: center;
+}
+.datosDetais{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+.detailsUser{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px 20px 40px;
+}
+.datosImage{
+    margin: 10px;
+    display: flex;
+    align-content: center;
+}
+.datos{
+    margin: 10px;
+}
+#menu_web_user{
+    text-align: left;
+    align-items: start;
+    display: none;
+    background: whitesmoke;
+    z-index: 10000;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    top:100%;
+    width: auto;
+}
+#bt_menu_header{
+    position: relative;
+    padding: 0px;
 }
