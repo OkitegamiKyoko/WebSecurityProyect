@@ -1,4 +1,4 @@
-package com.mycompany.okitegami.exceptions;
+package com.mycompany.okitegami.controllers.exceptions;
 
 import java.util.ArrayList;
 import java.util.List;

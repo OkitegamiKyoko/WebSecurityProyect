@@ -16,15 +16,17 @@
         </ui:decorate>
         <div class="main_form">
             <div class="formulario">
-                <h:form styleClass="loging" enctype="multipart/form-data" accept="index">
+                <h:form enctype="multipart/form-data" prependId="false" id="form" styleClass="loging" >
                     <h1 class="titulo_form h1">Register</h1>
                     <h:graphicImage value="#{userController.image}" style="width: 200px; height: 200px; border-radius: 50%; display: flex;align-self: center"></h:graphicImage>
-                    <h:outputLabel styleClass="user_label " value="Nombre de usuario" for="user"></h:outputLabel>
+                    <h:outputLabel styleClass="user_label " value="Nombre de usuario" for="userName"></h:outputLabel>
                     <h:inputText styleClass="user_input form-control" id="userName" value="#{userController.userNew.name}" autocomplete="false" required="true" requiredMessage="Campo requerido"></h:inputText>
                     <h:message for="userName" style="color: red"></h:message>
-                    <h:outputLabel styleClass="user_label " value="Foto de usuario" for="user"></h:outputLabel>
-                    <h:inputFile styleClass="inputFile"></h:inputFile>
-                    <h:outputLabel styleClass="user_label " value="Usuario" for="user"></h:outputLabel>
+                    <h:outputLabel styleClass="user_label " value="Foto de usuario" for="userImage"></h:outputLabel>
+                    <h:inputFile styleClass="inputFile" id="userImage">
+                    </h:inputFile>
+                    <h:message for="userImage" style="color: red"></h:message>
+                    <h:outputLabel styleClass="user_label " value="Correo" for="userEmail"></h:outputLabel>
                     <h:inputText styleClass="user_input form-control" id="userEmail" pt:placeholder="correo@example.com" value="#{userController.userNew.email}" autocomplete="false" required="true" requiredMessage="Campo requerido"></h:inputText>
                     <h:message for="userEmail" style="color: red"></h:message>
                     <h:outputLabel styleClass="password_label " value="Contraseña" for="password"></h:outputLabel>
@@ -32,17 +34,16 @@
                         <f:validateLength for="userPassword" minimum="8" maximum="32"></f:validateLength>
                     </h:inputSecret>
                     <h:message for="userPassword" style="color: red"></h:message>
-                    <h:outputLabel styleClass="password_label " value="Confirmar contraseña" for="passwordConfirm"></h:outputLabel>
-                    <h:inputSecret styleClass="password_input form-control" id="passwordConfirm" pt:placeholder="password" value="#{userController.userNew.password}" autocomplete="false" required="true" requiredMessage="Campo requerido"></h:inputSecret>
-                    <h:message for="passwordConfirm" style="color: red"></h:message>
-                    <h:outputLabel styleClass="password_label " value="Fecha de nacimiento" for="dataUser"></h:outputLabel>
-                    <h:inputText class="password_input form-control" id="dateUser" value="#{userController.userNew.date_ingreso}" pt:placeholder="09/10/14" autocomplete="true" required="true" requiredMessage="Campo requerido" label="Fecha">
-                        <f:convertDateTime pattern="dd/MM/yyyy" type="date"></f:convertDateTime>
-                    </h:inputText>
-                    <h:message for="dateUser" style="color: red"></h:message>
+                    <h:outputLabel styleClass="password_label" value="Confirmar contraseña" for="passwordConfirm"></h:outputLabel>
+                    <h:inputSecret styleClass="password_input form-control" id="passwordConfirm" pt:placeholder="password" value="#{userController.passwordConfirm}" autocomplete="false" required="true" requiredMessage="Campo requerido"></h:inputSecret>
+                    <h:message for="passwordConfirm" style="color: red "></h:message>
+                    <h:outputLabel styleClass="user_label " value="Tipo de cuenta" for="roles"></h:outputLabel>
+                    <h:selectOneMenu value="#{userController.userNew.idRol.id}" id="roles">
+                        <f:selectItems value="#{rolController.findRolesEntities(rolController.rolesCount,1)}" var="rol" itemLabel="#{rol.rol}" itemValue="#{rol.id}"></f:selectItems>
+                    </h:selectOneMenu>
                     <div class="botones_form">
                         <h:button value="Iniciar" outcome="loging" styleClass="btn btn-success"></h:button>
-                        <h:commandButton value="Registrar" action="#{userController.create()}" styleClass="btn btn-primary"></h:commandButton>
+                        <h:commandButton value="Registrar" type="submit" actionListener="#{userController.create(userController.userNew)}" styleClass="btn btn-primary"></h:commandButton>
                     </div>
                 </h:form>
                 <div class="botones_form navegation_page_button btn">

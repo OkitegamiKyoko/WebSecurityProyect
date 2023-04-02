@@ -25,7 +25,7 @@
                     </h:form>
                 </div>
                 <div class="fondo_datos" id="fondo_table">
-                    <h:dataTable class="tabla" value="#{userController.read}" var="user">
+                    <h:dataTable class="tabla" value="#{userController.findUsersEntities()}" var="user">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="ID"></h:outputText>
@@ -46,6 +46,12 @@
                         </h:column>
                         <h:column>
                             <f:facet name="header">
+                                <h:outputText value="Rol"></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{user.idRol.rol}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
                                 <h:outputText value="STATUS"></h:outputText>
                             </f:facet>
                             <h:outputText value="#{user.status}"></h:outputText>
@@ -56,7 +62,7 @@
                             </f:facet>
                             <h:form style="display: flex; justify-content: space-evenly">
                                 <h:commandButton value="Details" action="#{userController.details(user)}" ></h:commandButton>
-                                <h:commandButton value="Edit" action="#{userController.edit(user)}" ></h:commandButton>
+                                <h:commandButton value="Edit" action="#{userController.editUser(user)}" ></h:commandButton>
                                 <h:commandButton value="Desactive" action="#{userController.desactive(user)}"  rendered="#{user.status==1}"></h:commandButton>
                                 <h:commandButton value="Reactive" action="#{userController.reactive(user)}" rendered="#{user.status==0}"></h:commandButton>
                             </h:form>

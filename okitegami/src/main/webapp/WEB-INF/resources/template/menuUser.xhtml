@@ -8,21 +8,11 @@
         <ui:insert name="menuUser">
             <div id="menu_web_user">
                 <ul style="list-style-type: none">
-                    <li>Bienvenido</li>
-                    <li><h:link outcome="#{sessionController.details(sessionController.user)}" styleClass="TextLinkMenu">Mi cuenta</h:link></li>
-                    <c:if test="#{sessionController.exist()}">
-                        <c:if test="#{sessionController.session.nivel==1}">
-                            <li><h:outputText value="#{sessionController.session.email}"></h:outputText></li>
-                            <li><h:link outcome="users" styleClass="TextLinkMenu">Usuarios</h:link></li>
-                            <li><h:link outcome="departments" styleClass="TextLinkMenu">Departamentos</h:link></li>
-                            <li><h:link styleClass="TextLinkMenu">Limpieza</h:link></li>
-                            <li><h:link styleClass="TextLinkMenu">Gatos</h:link></li>
-                        </c:if>
-                    </c:if>
-                    <li value="About"><h:link outcome="About" value="About" styleClass="TextLinkMenu"></h:link></li>
+                    <li>Bienvenido <h:outputText value="#{sessionController.user.name}"/></li>
                     <li>
-                        <h:form>
-                            <h:commandButton value="Cerrar sesión" action="#{sessionController.close()}" styleClass="btn btn-danger"/>
+                        <h:form style="flex-direction: column">
+                            <li><h:commandLink value="Mi cuenta" action="#{userController.details(sessionController.user)}" styleClass="TextLinkMenu"></h:commandLink></li>
+                            <li><h:commandButton value="Cerrar sesión" action="#{sessionController.close()}" styleClass="btn btn-danger"/></li>
                         </h:form>
                     </li>
                 </ul>
