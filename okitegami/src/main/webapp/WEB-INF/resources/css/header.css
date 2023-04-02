@@ -396,3 +396,6 @@ td{
 .tabla{
     text-align: center;
 }
+.top{
+    max-height: 60px;
+}
