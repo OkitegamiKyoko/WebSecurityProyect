@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </h:head>
+    <h:body>
+        <div id="top" class="top">
+            <ui:insert name="#{top}">
+                <div id="banner" class="banner">
+                    <div class="menu button" id="bt_menu_header" onclick="verMenu()">
+                        <ui:decorate template="/WEB-INF/resources/template/menu.xhtml"/>
+                    </div>
+                    <h:button styleClass="logo button" outcome="index"></h:button>
+                    <div class="usuario">
+                        <c:if test="#{sessionController.exist()==false}">
+                            <h:button value="Registrar" styleClass="registrar button" outcome="register"></h:button>
+                            <h:button value="Ingresar" outcome="loging"  styleClass="iniciar button"></h:button>
+                        </c:if>
+                        <c:if test="#{sessionController.exist()}">
+                            <h:graphicImage value="#{sessionController.user.image}" style="width: 55px; height: 55px; border-radius: 50%; display: flex;align-self: center" onclick="verMenuUser()"></h:graphicImage>
+                            <ui:decorate template="/WEB-INF/resources/template/menuUser.xhtml"/>
+                        </c:if>
+                    </div>
+                </div>
+                <div class="banner_background"></div>
+            </ui:insert>
+        </div>
+        <h:outputStylesheet library="css" name="header.css"/>
+        <h:outputScript library="js" name="efects.js"/>
+    </h:body>
+</html>

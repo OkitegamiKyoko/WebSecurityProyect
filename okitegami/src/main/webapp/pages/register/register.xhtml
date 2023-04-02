@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Register</title>
+        <link rel="icon" href="#{resource['images:icon.jpg']}"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    </h:head>
+    <h:body styleClass="body">
+        <ui:decorate template="/WEB-INF/resources/template/header.xhtml">
+            <ui:param name="top" value="top"></ui:param>
+        </ui:decorate>
+        <div class="main_form">
+            <div class="formulario">
+                <h:form enctype="multipart/form-data" prependId="false" id="form" styleClass="loging" >
+                    <h1 class="titulo_form h1">Register</h1>
+                    <h:graphicImage value="#{userController.image}" style="width: 200px; height: 200px; border-radius: 50%; display: flex;align-self: center"></h:graphicImage>
+                    <h:outputLabel styleClass="user_label " value="Nombre de usuario" for="userName"></h:outputLabel>
+                    <h:inputText styleClass="user_input form-control" id="userName" value="#{userController.userNew.name}" autocomplete="false" required="true" requiredMessage="Campo requerido"></h:inputText>
+                    <h:message for="userName" style="color: red"></h:message>
+                    <h:outputLabel styleClass="user_label " value="Foto de usuario" for="userImage"></h:outputLabel>
+                    <h:inputFile styleClass="inputFile" id="userImage">
+                    </h:inputFile>
+                    <h:message for="userImage" style="color: red"></h:message>
+                    <h:outputLabel styleClass="user_label " value="Correo" for="userEmail"></h:outputLabel>
+                    <h:inputText styleClass="user_input form-control" id="userEmail" pt:placeholder="correo@example.com" value="#{userController.userNew.email}" autocomplete="false" required="true" requiredMessage="Campo requerido"></h:inputText>
+                    <h:message for="userEmail" style="color: red"></h:message>
+                    <h:outputLabel styleClass="password_label " value="Contraseña" for="password"></h:outputLabel>
+                    <h:inputSecret styleClass="password_input form-control" id="userPassword" pt:placeholder="password" value="#{userController.userNew.password}" autocomplete="false" required="true" requiredMessage="Campo requerido" validatorMessage="Contraseña mayor a 32 o menor a 8 caracteres">
+                        <f:validateLength for="userPassword" minimum="8" maximum="32"></f:validateLength>
+                    </h:inputSecret>
+                    <h:message for="userPassword" style="color: red"></h:message>
+                    <h:outputLabel styleClass="password_label" value="Confirmar contraseña" for="passwordConfirm"></h:outputLabel>
+                    <h:inputSecret styleClass="password_input form-control" id="passwordConfirm" pt:placeholder="password" value="#{userController.passwordConfirm}" autocomplete="false" required="true" requiredMessage="Campo requerido"></h:inputSecret>
+                    <h:message for="passwordConfirm" style="color: red "></h:message>
+                    <h:outputLabel styleClass="user_label " value="Tipo de cuenta" for="roles"></h:outputLabel>
+                    <h:selectOneMenu value="#{userController.userNew.idRol.id}" id="roles">
+                        <f:selectItems value="#{rolController.findRolesEntities(rolController.rolesCount,1)}" var="rol" itemLabel="#{rol.rol}" itemValue="#{rol.id}"></f:selectItems>
+                    </h:selectOneMenu>
+                    <div class="botones_form">
+                        <h:button value="Iniciar" outcome="loging" styleClass="btn btn-success"></h:button>
+                        <h:commandButton value="Registrar" type="submit" actionListener="#{userController.create(userController.userNew)}" styleClass="btn btn-primary"></h:commandButton>
+                    </div>
+                </h:form>
+                <div class="botones_form navegation_page_button btn">
+                    <button onclick="window.history.back();" title="Volver" class="btn btn-dark">Volver</button>
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>

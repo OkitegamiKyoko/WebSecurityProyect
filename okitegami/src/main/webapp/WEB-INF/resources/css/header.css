@@ -1,0 +1,398 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 4 feb. 2023, 17:54:24
+    Author     : meli_
+*/
+.button{
+    cursor: pointer;
+}
+.link{
+    font-family: cursive;
+}
+.banner{
+    width: 100%;
+    height: 60px;
+    font-family: "Helvetica";
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    position: relative;
+    top: 0;
+    background-color: rgba(0, 0, 0, 1);
+    box-shadow: 0px 20px 30px 0px;
+}
+.banner_background{
+    width: 100%;
+    height: 60px;
+    position: static;
+}
+.registrar{
+    width: 120px;
+    height: 32px;
+    padding: 0px 10px 0px 10px;
+    background: #ffffff;
+    color: #232323;
+    border-color: #ffffff;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px 3px 3px 3px;
+    font-family: "Helvetica";
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+}
+.iniciar{
+    width: 120px;
+    height: 32px;
+    padding: 0px 10px 0px 10px;
+    background: #ebebeb;
+    color: #232323;
+    border-color: #232323;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 14px 14px 14px 14px;
+    font-family: "Helvetica";
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+}
+
+body{
+    margin: 0;
+    background-color:#28c4dd;
+}
+body{
+    overflow: overlay;
+}
+.body::-webkit-scrollbar{
+    width: 0px;
+    border-radius: 10px;
+}
+.body::-webkit-scrollbar-thumb {
+    background-color:#0c8c00;
+    border-radius: 10px;
+}
+.body::-webkit-scrollbar-thumb:hover{
+    background-color:#54ff43;
+    border-radius: 10px;
+}
+.body::-webkit-scrollbar:hover{
+    width: 15px;
+}
+.body{
+    background-image: url("#{resource['images/index_background.png']}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /*backface-visibility: ;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.menu{
+    display: flex;
+    width: 90px;
+    height: 60px;
+    padding: 0px 10px 0px 10px;
+    background: #ebebeb;
+    color: #232323;
+    font-family: "Helvetica";
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    background-image: url("#{resource['images/error_401.png']}");
+    background-size: cover;
+}
+.logo{
+    border:0;
+    width: 381px;
+    height: 60px;
+    align-self: center;
+    background-image: url("#{resource['images/error_500.png']}");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    justify-self: center;
+    position: absolute;
+    left: 40%;
+}
+.background{
+    min-width: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+}
+.usuario{
+    width: 300px;
+    display: flex;
+    position: relative;
+    justify-content: space-evenly;
+}
+.main{
+    min-width: 100%;
+    position: absolute;
+    top: 60px;
+}
+.body_error_404{
+    background-image: url("#{resource['images/error_404.png']}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 8%;
+}
+.body_error_500{
+    background-image: url("#{resource['images/error_500.png']}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.formulario{
+    min-width: 432px;
+    min-height: 338px;
+    padding: 8px 8px 8px 8px;
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.75);
+    background: #ffffff;
+    border-color: #000000;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 30px 30px 30px 30px;
+    display: flex;
+    flex-direction:column;
+    align-content: center;
+    justify-content: center;
+    margin-top: 120px;
+    margin-bottom: 60px;
+}
+.loging{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px 20px 40px;
+}
+.titulo_form{
+    text-align: center;
+}
+.botones_form{
+    margin: 20px 0px 20px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.navegation_page_button{
+    margin: 0px 0px 0px 0px;
+}
+.main_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 950px;
+    margin-top: -60px;
+    margin-bottom: -60px;
+}
+.user_label,.password_label,.user_input,.password_input{
+    font-size: 1.1em;
+}
+.user_label,.password_label{
+    margin-top: 15px;
+    margin-bottom: 2px;
+    padding: 0px;
+}
+.user_input,.password_input{
+    margin-top: 0px;
+    box-sizing: border-box;
+}
+.inputFile{
+    margin-top: 10px;
+}
+.title_Main{
+    font-size: 10em;
+    text-align: center;
+    position: absolute;
+}
+.Center_Logo{
+    min-width: 100%;
+    height: 901px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("#{resource['images/index_title_main.png']}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.Box{
+    min-width: 100%;
+    height: 901px;
+    background-image: url("#{resource['images/error_500.png']}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.TextBox1{
+    background-color: white;
+    max-width: 50%;
+    min-height: 901px;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(270deg, rgba(255,255,255,0.6839110644257703) 0%, rgba(255,255,255,1) 28%, rgba(255,255,255,1) 100%);
+    border: none;
+    word-break: break-all;
+}
+#box1{
+    background-image: url("#{resource['images/error_500.png']}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#box2{
+    background-image: url("#{resource['images/error_401.png']}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#titulo{
+    font-family: cursive;
+    font-size: 5em;
+}
+*, ::after, ::before {
+    box-sizing: revert;
+}
+#loging{
+    display: block;
+}
+p{
+  animation-duration: 5s;
+  animation-name: slidein;
+  margin-right: 80px;
+  margin-left: 80px;
+}
+#loging{
+    display: block;
+}
+#menu_web{
+    display: none;
+    z-index: 1000;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    top: 100%;
+    margin: 0px;
+    text-align: left;
+}
+.TextLinkMenu, li{
+    text-decoration: none;
+    color: black;
+    font-size: 1.1em;
+    margin: 5px;
+}
+.TextLinkMenu{
+    text-decoration: none;
+    color: black;
+    font-size: 1.1em;
+    margin: 5px;
+}
+ul li a:hover{
+    background-color:rgba(91, 90, 91, 0.22);
+}
+ul{
+    margin: 10px;
+    padding: 0px;
+}
+.fondo_datos{
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 7.5px;
+    margin-bottom: 7.5px;
+    box-shadow: 16px 12px 14px 0px rgba(0,0,0,0.81);
+    -webkit-box-shadow: 16px 12px 14px 0px rgba(0,0,0,0.81);
+    -moz-box-shadow: 16px 12px 14px 0px rgba(0,0,0,0.81);
+}
+.main_page{
+    width: 800px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/*#javax_faces_developmentstage_messages
+ Usado para mostar mensajes de error de redireccionamiento no definidos
+ Unicamente Habilitar en produccion o para revision de interfaces
+*/
+#javax_faces_developmentstage_messages{
+    display: none;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+#fondo_table{
+    display: block;
+    padding: 10px;
+    padding: 10px;
+}
+.tabla{
+    width: 100%;
+    border: 1px solid;
+    border-radius: 10px;
+}
+tr{
+    border-top: 1px solid;
+}
+td{
+    text-align: center;
+}
+.datosDetaisUser{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+.detailsUser{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px 20px 40px;
+}
+.datosImage{
+    margin: 10px;
+    display: flex;
+    align-content: center;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px 20px 40px;
+}
+.datosDetais{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+.datos{
+    margin: 10px;
+}
+#menu_web_user{
+    text-align: left;
+    align-items: start;
+    display: none;
+    background: whitesmoke;
+    z-index: 10000;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    top:100%;
+    width: auto;
+}
+#bt_menu_header{
+    position: relative;
+    padding: 0px;
+}
+.tabla{
+    text-align: center;
+}

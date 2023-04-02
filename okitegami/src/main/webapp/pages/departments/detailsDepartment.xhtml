@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Okitegami | Edit details</title>
+        <link rel="icon" href="#{resource['images:icon.jpg']}"/>
+        <h:outputStylesheet library="css" name="header.css"/>
+        <h:outputScript library="js" name="efects.js" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    </h:head>
+     <h:body styleClass="body">
+        <ui:decorate template="/WEB-INF/resources/template/header.xhtml">
+            <ui:param name="top" value="top"></ui:param>
+        </ui:decorate>
+        <div class="main">
+            <div class="formulario">
+                <div class="details">
+                    <h1 class="titulo_form h1">Detalles del departamento</h1>
+                    <div class="datosDetais">
+                            <h:outputLabel styleClass="user_label " value="Nombre" for="user"></h:outputLabel>
+                            <h:outputText styleClass="user_input form-control" id="userName" value="#{detailsDepart.dep.nombre}"></h:outputText>
+                            <h:outputLabel styleClass="user_label " value="Descripción" for="user"></h:outputLabel>
+                            <h:outputText styleClass="user_input form-control" id="user" value="#{detailsDepart.dep.descripcion}"></h:outputText>
+                            <h:outputLabel styleClass="user_label " value="Estatus" for="userStatus"></h:outputLabel>
+                            <c:if test="#{detailsDepart.dep.status==1}">
+                                <h:outputText styleClass="user_input form-control" id="userStatus" value="Activo"></h:outputText>
+                            </c:if>
+                            <c:if test="#{detailsDepart.dep.status==0}">
+                                <h:outputText styleClass="user_input form-control" id="userStatu" value="Inactivo"></h:outputText>
+                            </c:if>
+                    </div>
+                    <div class="botones_form">
+                        <h:button value="Editar" styleClass="btn btn-success" outcome="" disabled="true"></h:button>
+                        <button tittle="Volver" class="btn btn-dark" onclick="window.history.back();">Volver</button>
+                    </div>
+                </div>
+            </div>
+            <div class="fondo_datos" id="fondo_table" style="min-width: 800px">    
+                        <h1 class="titulo_form h1">Puestos</h1>
+                        <h:dataTable class="tabla" value="#{detailsDepart.dep.puestosList}" var="job">
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="ID"></h:outputText>
+                                    </f:facet>
+                                        <h:outputText value="#{job.id}"></h:outputText>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="NAME"></h:outputText>
+                                    </f:facet>
+                                    <h:outputText value="#{job.nombre}"></h:outputText>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="NO. EMPLOYEES"></h:outputText>
+                                    </f:facet>
+                                    <h:outputText value="#{job.empleadosList.size()}"></h:outputText>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="STATUS"></h:outputText>
+                                    </f:facet>
+                                    <h:outputText value="#{job.status}"></h:outputText>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="ACTIONS"></h:outputText>
+                                    </f:facet>
+                                    <h:form style="display: flex; justify-content: space-evenly">
+                                        <h:commandButton value="Details" action="#{jobController.edit(job)}" ></h:commandButton>
+                                        <h:commandButton value="Edit" action="#{jobController.details(job)}" ></h:commandButton>
+                                        <h:commandButton value="Desactive" action="#{jobController.desactive(job)}"  rendered="#{job.status==1}"></h:commandButton>
+                                        <h:commandButton value="Reactive" action="#{jobController.reactive(job)}" rendered="#{job.status==0}"></h:commandButton>
+                                    </h:form>
+                                </h:column>
+                            </h:dataTable>
+                    </div>
+        </div>
+    </h:body>
+</html>
