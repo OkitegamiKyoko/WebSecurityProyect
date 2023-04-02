@@ -349,7 +349,7 @@ tr{
 td{
     text-align: center;
 }
-.datosDetais{
+.datosDetaisUser{
     display: flex;
     flex-direction: row;
     margin: 0;
@@ -363,6 +363,16 @@ td{
     margin: 10px;
     display: flex;
     align-content: center;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px 20px 40px;
+}
+.datosDetais{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
 }
 .datos{
     margin: 10px;
@@ -382,4 +392,7 @@ td{
 #bt_menu_header{
     position: relative;
     padding: 0px;
+}
+.tabla{
+    text-align: center;
 }

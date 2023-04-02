@@ -1,4 +1,4 @@
-package com.mycompany.okitegami.exceptions;
+package com.mycompany.okitegami.controllers.exceptions;
 
 public class RollbackFailureException extends Exception {
     public RollbackFailureException(String message, Throwable cause) {

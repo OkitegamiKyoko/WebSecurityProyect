@@ -1,4 +1,4 @@
-package com.mycompany.okitegami.exceptions;
+package com.mycompany.okitegami.controllers.exceptions;
 
 public class PreexistingEntityException extends Exception {
     public PreexistingEntityException(String message, Throwable cause) {

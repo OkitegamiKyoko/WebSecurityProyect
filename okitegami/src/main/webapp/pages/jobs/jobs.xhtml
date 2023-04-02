@@ -7,7 +7,7 @@
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
-        <title>Okitegami | Departments</title>
+        <title>Okitegami | Jobs</title>
         <link rel="icon" href="#{resource['images:icon.jpg']}"/>
     </h:head>
     <h:body styleClass="body" id="body">
@@ -17,49 +17,48 @@
         <div class="main">
             <div class="main_page">
                 <div class="fondo_datos" id="fondo_options">
-                    <h1 class="titulo_form h1">Departamentos</h1>
+                    <h1 class="titulo_form h1">Puestos</h1>
                     <h:form>
                         <h:outputLabel value="Buscar"></h:outputLabel>
                         <h:inputText pt:placeholder="Departamentos"></h:inputText>
                         <h:commandButton value="Buscar"></h:commandButton>
                     </h:form>
-                    <h:button outcome="add" value="Añadir"></h:button>
                 </div>
                 <div class="fondo_datos" id="fondo_table">
-                    <h:dataTable class="tabla" value="#{departmentController.findDepartamentosEntities()}" var="department">
+                    <h:dataTable class="tabla" value="#{jobsController.findPuestosEntities()}" var="job">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="ID"></h:outputText>
                             </f:facet>
-                                <h:outputText value="#{department.id}"></h:outputText>
+                                <h:outputText value="#{job.id}"></h:outputText>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="NAME"></h:outputText>
                             </f:facet>
-                            <h:outputText value="#{department.nombre}"></h:outputText>
+                            <h:outputText value="#{job.nombre}"></h:outputText>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="Descripcion"></h:outputText>
+                                <h:outputText value="DEPARTMENT"></h:outputText>
                             </f:facet>
-                            <h:outputText value="#{department.descripcion}"></h:outputText>
+                            <h:outputText value="#{job.idDepart.nombre}"></h:outputText>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="STATUS"></h:outputText>
                             </f:facet>
-                            <h:outputText value="#{department.status}"></h:outputText>
+                            <h:outputText value="#{job.status}"></h:outputText>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="ACTIONS"></h:outputText>
                             </f:facet>
                             <h:form style="display: flex; justify-content: space-evenly">
-                                <h:commandButton value="Details" action="#{detailsDepart.goDep(department)}" ></h:commandButton>
-                                <h:commandButton value="Edit" action="#{departmentController.details(department)}" ></h:commandButton>
-                                <h:commandButton value="Desactive" action="#{departmentController.desactive(department)}"  rendered="#{department.status==1}"></h:commandButton>
-                                <h:commandButton value="Reactive" action="#{departmentController.reactive(department)}" rendered="#{department.status==0}"></h:commandButton>
+                                <h:commandButton value="Edit" action="#{jobController.edit(department)}" ></h:commandButton>
+                                <h:commandButton value="Edit" action="#{jobController.details(department)}" ></h:commandButton>
+                                <h:commandButton value="Desactive" action="#{jobController.desactive(department)}"  rendered="#{job.status==1}"></h:commandButton>
+                                <h:commandButton value="Reactive" action="#{jobController.reactive(department)}" rendered="#{job.status==0}"></h:commandButton>
                             </h:form>
                         </h:column>
                     </h:dataTable>
