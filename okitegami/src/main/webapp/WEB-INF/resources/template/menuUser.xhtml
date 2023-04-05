@@ -9,12 +9,12 @@
             <div id="menu_web_user">
                 <ul style="list-style-type: none">
                     <li>Bienvenido <h:outputText value="#{sessionController.user.name}"/></li>
-                    <li>
-                        <h:form style="flex-direction: column">
-                            <li><h:commandLink value="Mi cuenta" action="#{userController.details(sessionController.user)}" styleClass="TextLinkMenu"></h:commandLink></li>
-                            <li><h:commandButton value="Cerrar sesión" action="#{sessionController.close()}" styleClass="btn btn-danger"/></li>
-                        </h:form>
-                    </li>
+                    <h:form style="flex-direction: column; margin: 0px">
+                        <li><h:commandLink value="Mi cuenta" action="#{userController.details(sessionController.user)}" styleClass="TextLinkMenu"></h:commandLink></li>
+                        <li><h:commandLink value="Actualizar cuenta" action="#{userController.editUser(sessionController.user)}" styleClass="TextLinkMenu"></h:commandLink></li>
+                        <li><h:link value="Actualizar contraseña" outcome="password" styleClass="TextLinkMenu"></h:link></li>
+                        <li><h:commandButton value="Cerrar sesión" action="#{sessionController.close()}" styleClass="btn btn-danger" style="display: flex; justify-items: center"/></li>
+                    </h:form>
                 </ul>
             </div>
         </ui:insert>

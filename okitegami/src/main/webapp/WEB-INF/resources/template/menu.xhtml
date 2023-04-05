@@ -10,12 +10,24 @@
                 <ul style="list-style-type: none">
                     <li><h:link outcome="index" styleClass="TextLinkMenu">Inicio</h:link></li>
                     <c:if test="#{sessionController.exist()}">
-                        <c:if test="#{sessionController.session.nivel==1}">
-                            <li><h:outputText value="#{sessionController.session.email}"></h:outputText></li>
+                        <c:if test="#{sessionController.user.idRol.id==1}">
+                            <!--Menu Admin-->
+                            <li><h:outputText value="Administrador"></h:outputText></li>
                             <li><h:link outcome="users" styleClass="TextLinkMenu">Usuarios</h:link></li>
+                            <li><h:link styleClass="TextLinkMenu">Clientes</h:link></li>
                             <li><h:link outcome="departments" styleClass="TextLinkMenu">Departamentos</h:link></li>
-                            <li><h:link styleClass="TextLinkMenu">Limpieza</h:link></li>
-                            <li><h:link styleClass="TextLinkMenu">Gatos</h:link></li>
+                            <li><h:link outcome="jobs" styleClass="TextLinkMenu">Puestos</h:link></li>
+                            <li><h:link styleClass="TextLinkMenu">Empleados</h:link></li>
+                        </c:if>
+                        <c:if test="#{sessionController.user.idRol.id==4}">
+                            <!--Menu Cliente-->
+                            <li><h:outputText value="Cliente"></h:outputText></li>
+                            <li><h:link styleClass="TextLinkMenu">Empleados</h:link></li>
+                            <li><h:link styleClass="TextLinkMenu">Contratos</h:link></li>
+                        </c:if>
+                        <c:if test="#{sessionController.user.idRol.id==3}">
+                            <!--Menu Empleado-->
+                            <li><h:link styleClass="TextLinkMenu">Contratos</h:link></li>
                         </c:if>
                     </c:if>
                     <li value="About"><h:link outcome="About" value="About" styleClass="TextLinkMenu"></h:link></li>

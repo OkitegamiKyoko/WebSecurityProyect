@@ -7,7 +7,8 @@ package com.mycompany.okitegami.dao;
 import com.mycompany.okitegami.controllers.DepartamentosJpaController;
 import com.mycompany.okitegami.models.Departamentos;
 import java.io.Serializable;
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.ApplicationScoped;
+//import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -16,7 +17,7 @@ import javax.inject.Named;
  * @author meli_
  */
 @Named("detailsDepart")
-@RequestScoped
+@ApplicationScoped
 public class DetailsDepartment implements Serializable{
     
     @Inject

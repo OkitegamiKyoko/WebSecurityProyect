@@ -23,14 +23,13 @@
                     <h:inputText styleClass="user_input form-control" id="userName" value="#{userController.userNew.name}" autocomplete="false" required="true" requiredMessage="Campo requerido"></h:inputText>
                     <h:message for="userName" style="color: red"></h:message>
                     <h:outputLabel styleClass="user_label " value="Foto de usuario" for="userImage"></h:outputLabel>
-                    <h:inputFile styleClass="inputFile" id="userImage">
-                    </h:inputFile>
+                    <h:inputFile styleClass="inputFile" id="userImage"></h:inputFile>
                     <h:message for="userImage" style="color: red"></h:message>
                     <h:outputLabel styleClass="user_label " value="Correo" for="userEmail"></h:outputLabel>
                     <h:inputText styleClass="user_input form-control" id="userEmail" pt:placeholder="correo@example.com" value="#{userController.userNew.email}" autocomplete="false" required="true" requiredMessage="Campo requerido"></h:inputText>
                     <h:message for="userEmail" style="color: red"></h:message>
                     <h:outputLabel styleClass="password_label " value="Contraseña" for="password"></h:outputLabel>
-                    <h:inputSecret styleClass="password_input form-control" id="userPassword" pt:placeholder="password" value="#{userController.userNew.password}" autocomplete="false" required="true" requiredMessage="Campo requerido" validatorMessage="Contraseña mayor a 32 o menor a 8 caracteres">
+                    <h:inputSecret styleClass="password_input form-control" id="userPassword" pt:placeholder="password" value="#{userController.userNew.password}" autocomplete="false" required="true" requiredMessage="Campo requerido" validatorMessage="Contraseña debe ser mayor a 8 o menor a 32 caracteres">
                         <f:validateLength for="userPassword" minimum="8" maximum="32"></f:validateLength>
                     </h:inputSecret>
                     <h:message for="userPassword" style="color: red"></h:message>

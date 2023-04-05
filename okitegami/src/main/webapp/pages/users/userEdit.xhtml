@@ -25,14 +25,10 @@
                     <h:outputLabel styleClass="user_label " value="Usuario" for="user"></h:outputLabel>
                     <h:inputText styleClass="user_input form-control" id="user" requiredMessage="hola" pt:placeholder="correo@example.com" value="#{userController.userEdit.email}"></h:inputText>
                     <h:outputLabel styleClass="password_label " value="Contraseña" for="password"></h:outputLabel>
-                    <h:inputSecret styleClass="password_input form-control" id="password" pt:placeholder="password" value="#{userController.userEdit.password}" redisplay="true" label="Password">
+                    <h:inputSecret styleClass="password_input form-control" id="password" pt:placeholder="password" value="#{userController.userEdit.password}" redisplay="true" label="Password" disabled="true">
                         <f:validateLength minimum="8" maximum="32"></f:validateLength>
                     </h:inputSecret>
-                    <h:message for="password"></h:message>
-                    <h:outputLabel styleClass="password_label " value="Confirmar contraseña" for="passwordConfirm"></h:outputLabel>
-                    <h:inputText styleClass="password_input form-control" id="passwordConfirm" pt:placeholder="password" value="#{userController.passwordConfirm}">
-                        <f:validateLength minimum="8" maximum="32"></f:validateLength>
-                    </h:inputText>
+                    <h:button value="Cambiar contraseña" outcome="password" styleClass="btn btn-primary"></h:button>
                     <h:outputLabel styleClass="password_label " value="Fecha de ingreso" for="dataUser"></h:outputLabel>
                     <h:inputText class="password_input form-control" id="dateUser" value="#{userController.userEdit.dateIngreso}" required="true" requiredMessage="Campo requerido" label="Fecha" validatorMessage="Error:" disabled="true">
                         <f:convertDateTime pattern="dd/MM/yyyy" type="date"></f:convertDateTime>

@@ -56,7 +56,7 @@
                                 <h:outputText value="ACTIONS"></h:outputText>
                             </f:facet>
                             <h:form style="display: flex; justify-content: space-evenly">
-                                <h:commandButton value="Details" action="#{detailsDepart.goDep(department)}" ></h:commandButton>
+                                <h:commandButton value="Details" action="#{detailsDepart.goDep(department)}"></h:commandButton>
                                 <h:commandButton value="Edit" action="#{departmentController.details(department)}" ></h:commandButton>
                                 <h:commandButton value="Desactive" action="#{departmentController.desactive(department)}"  rendered="#{department.status==1}"></h:commandButton>
                                 <h:commandButton value="Reactive" action="#{departmentController.reactive(department)}" rendered="#{department.status==0}"></h:commandButton>
@@ -67,5 +67,6 @@
                 <h:graphicImage library="images" name="icon.jpg" alt="error500" styleClass="error404"/>
             </div>
         </div>
+        <h:outputScript library="js" name="efects.js"/>
     </h:body>
 </html>

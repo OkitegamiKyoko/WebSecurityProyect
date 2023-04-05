@@ -289,12 +289,14 @@ p{
 .TextLinkMenu, li{
     text-decoration: none;
     color: black;
+    border-radius: 10px;
     font-size: 1.1em;
     margin: 5px;
 }
 .TextLinkMenu{
     text-decoration: none;
     color: black;
+    padding: 5px;
     font-size: 1.1em;
     margin: 5px;
 }
@@ -398,4 +400,8 @@ td{
 }
 .top{
     max-height: 60px;
+}
+li{
+    text-decoration: none;
+    color: black;
 }

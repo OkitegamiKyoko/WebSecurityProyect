@@ -25,6 +25,17 @@ function verMenuUser(){
         };
 };
 
+document.getElementById("menu_web").onmouseover=function(){
+    console.log("click_menu"+document.getElementById("menu_web").getAttribute("display"));
+    document.getElementById("menu_web").style="display:block;";
+};
+
+document.getElementById("menu_web").onmouseout=function(){
+    
+    console.log("click_menu"+document.getElementById("menu_web").getAttribute("display"));
+    document.getElementById("menu_web").style="display:none;";
+};
+
 let script=document.createElement('script');
 
 function ver(){
