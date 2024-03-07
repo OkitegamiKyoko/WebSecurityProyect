@@ -14,9 +14,11 @@ Todo el proyecto se realizara mediante GitHub, donde todos los integrantes del e
 # Documentación
 Para poder acceder a la documentacion del proyecto, es que se hará uso de la plataforma oneDrive para poder realizarlo de manera colavorativa y así todos tengamos acceso a la misma información.
 
-Toda la documentacion o material que se genere, debera ser subido y editado rirectamente desde esta carpeta.
+Toda la documentacion o material que se genere, debera ser subido y editado directamente desde esta carpeta.
 
 Link: https://tolucatecnm-my.sharepoint.com/:f:/g/personal/amartinezm2_toluca_tecnm_mx/EhtoI5TUecBNogXF-leRhHQBCxSfDweqPW_A9ybTJNVC3A?e=MffWID
+
+⚠️Notás importantes: Solo podran tener acceso a ella con permiso del administrador
 # Estandares de programación
 - Todo archivo que se genere debera tener:
   ```java
@@ -38,5 +40,3 @@ Cada commit que se realice debera contener comentarios sobre porque se esta real
 Esto para llevar un seguimiento adecuado sobre todos los cambios que se hayan efectuado
 
 Cada una de las carpetas tendran el nombre de la pagina principal o sobre que se tratan
-
-Gato 🐱 
