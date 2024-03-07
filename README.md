@@ -1,6 +1,4 @@
-# E1WebSecurityProyect
-Repositorio del equipo 1 de seguridad web
-
+# Web Security Proyect
 ⚠️Notás importantes:
 - Todo lo mencionado aqui debera seguirse por cada uno de los miembros del equipo.
 - En caso de ser necesario se realizaran reuniones (Presenciales o virtuales) para la cordinación o revisión de avances.
