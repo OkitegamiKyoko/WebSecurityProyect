@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <ui:composition>
+        <ui:insert name="menu">
+            <div id="menu_web">
+                <ul class="menu_box">
+                    <li><h:link outcome="index" styleClass="TextLinkMenu">Inicio</h:link></li>
+                    <c:if test="#{sessionController.exist()}">
+                        <c:if test="#{sessionController.permisos('Administradores')}">
+                            <!--Menu Admin-->
+                            <li><h:outputText value="Administrador"></h:outputText></li>
+                            <li><h:link outcome="users" styleClass="TextLinkMenu">Usuarios</h:link></li>
+                            <li><h:link outcome="clients" styleClass="TextLinkMenu">Clientes</h:link></li>
+                            <li><h:link outcome="departments" styleClass="TextLinkMenu">Departamentos</h:link></li>
+                            <li><h:link outcome="jobs" styleClass="TextLinkMenu">Puestos</h:link></li>
+                            <li><h:link outcome="employees" styleClass="TextLinkMenu">Empleados</h:link></li>
+                            <li><h:link outcome="contratsClients" styleClass="TextLinkMenu">Contratos clientes</h:link></li>
+                            <li><h:link outcome="contratsEmployees" styleClass="TextLinkMenu">Contratos empleados</h:link></li>
+                        </c:if>
+                        <c:if test="#{sessionController.permisos('Clientes')}">
+                            <!--Menu Cliente-->
+                            <li><h:outputText value="Cliente"></h:outputText></li>
+                            <li><h:link styleClass="TextLinkMenu">Empleados</h:link></li>
+                            <li><h:link styleClass="TextLinkMenu">Contratos</h:link></li>
+                        </c:if>
+                        <c:if test="#{sessionController.permisos('Recursos Humanos')}">
+                            <!--Menu Empleado-->
+                            <li><h:outputText value="Recursos Humanos"></h:outputText></li>
+                            <h:form style="flex-direction: column; margin: 0px">
+                                <li><h:link outcome="departments" styleClass="TextLinkMenu">Departamentos</h:link></li>
+                                <li><h:link outcome="jobs" styleClass="TextLinkMenu">Puestos</h:link></li>
+                                <li><h:link outcome="employees" styleClass="TextLinkMenu">Empleados</h:link></li>
+                                <li><h:link outcome="contratsEmployees" styleClass="TextLinkMenu">Contratos Empleados</h:link></li>
+                            </h:form>
+                        </c:if>
+                        <c:if test="#{sessionController.permisos('Empleados')}">
+                            <!--Menu Empleado-->
+                            <li><h:outputText value="Empleado"></h:outputText></li>
+                            <h:form style="flex-direction: column; margin: 0px; border-top-color: black">
+                                <li><h:commandLink action="#{detailsContratEmp.verContratos(null,sessionController.user)}" styleClass="TextLinkMenu">Mi Contrato</h:commandLink></li>
+                                <li><h:commandLink action="#{detailsContratEmp.verEnvio(null,sessionController.user)}" styleClass="TextLinkMenu">Mi envio</h:commandLink></li>
+                            </h:form>
+                            <li></li>
+                        </c:if>
+                    </c:if>
+                    <li value="About"><h:link outcome="About" value="About" styleClass="TextLinkMenu"></h:link></li>
+                </ul>
+            </div>
+        </ui:insert>
+    </ui:composition>
+</html>

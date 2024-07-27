@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Okitegami | Users</title>
+        <link rel="icon" href="#{resource['images:icon.jpg']}"/>
+    </h:head>
+    <h:body styleClass="body" id="body">
+        <ui:decorate template="/WEB-INF/resources/template/header.xhtml">
+            <ui:param name="top" value="top"></ui:param>
+        </ui:decorate>
+        <p:growl showDetail="true" id="messages"></p:growl>
+        <div class="main">
+            <div class="main_page">
+                <div class="fondo_datos" id="fondo_options">
+                    <h1 class="titulo_form h1">Usuarios</h1>
+                    <h:form>
+                        <p:dataTable id="table"  value="#{findUser.list}" var="user" 
+                                     widgetVar="table" rows="15" paginator="true" 
+                                     paginatorPosition="bottom" 
+                                     currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} registros" 
+                                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" 
+                                     sortMode="multiple" 
+                                     rowsPerPageTemplate="5,10,15" 
+                                     filteredValue="#{findUser.listFilter}"
+                                     globalFilterFunction="#{findUser.globalFilterFunction}" rowExpandMode="true">
+                            <f:facet name="header">
+                                <div class="flex justify-content-end">
+                                    <span class="ui-input-icon-left">
+                                        <i class="pi pi-search" />
+                                        <p:inputText id="globalFilter" onkeyup="PF('table').filter()" style="min-width:300px"
+                                                     placeholder="Buscar usuario por id, username o email" />
+                                    </span>
+                                </div>
+                            </f:facet>
+                            <p:column headerText="ID" sortBy="#{user.id}" sortOrder="asc" sortPriority="1" filterable="false" resizable="true" style="width: 50px;">
+                                <h:outputText value="#{user.id}" style="word-wrap: break-word;"></h:outputText>
+                            </p:column>
+                            <p:column headerText="NAME" sortBy="#{user.name}" sortPriority="2" filterable="false" resizable="true">
+                                <h:outputText value="#{user.name}" style="word-wrap: break-word;"></h:outputText>
+                            </p:column>
+                            <p:column headerText="E-MAIL" sortBy="#{user.email}" sortPriority="3" resizable="true">
+                                <h:outputText value="#{user.email}" style="word-wrap: break-word;"/>
+                            </p:column>
+                            <p:column headerText="ROLE" filterable="false" resizable="true" style="word-wrap: break-word;">
+                                <h:outputText value="#{user.idRol.rol}"></h:outputText>
+                            </p:column>
+                            <p:column headerText="STATUS" sortBy="#{user.status}" sortPriority="3" resizable="true" filterable="false" style="width: 90px;">
+                                <h:outputText value="#{status.status(user.status)}"></h:outputText>
+                            </p:column>
+                            <p:column headerText="ACTIONS" style=" justify-content: space-evenly; width: 100px;">
+                                <div style="display: flex; justify-content: space-evenly; width: 100px;">
+                                    <p:commandButton icon="pi pi-search" 
+                                                     style="color: blue; background: transparent; border-color: transparent;" 
+                                                     ajax="false" title="Details" action="#{userController.details(user)}" />
+                                    <p:commandButton icon="pi pi-pencil" 
+                                                     style="color: green; background: transparent; border-color: transparent;" 
+                                                     ajax="false" title="Edit" action="#{userController.editUser(user)}"/>
+                                    <p:commandButton id="delete" icon="pi pi-times" 
+                                                     style="color: red; background: transparent; border-color: transparent;" 
+                                                     ajax="true" title="Desactive" action="#{findUser.desactive(user)}" 
+                                                     rendered="#{user.status==1 or user.status==2}" update="table messages">
+                                    </p:commandButton>
+                                    <p:commandButton id="active" icon="pi pi-check" 
+                                                     style="color: greenyellow; background: transparent; border-color: transparent;" 
+                                                     ajax="true" title="Reactive" action="#{findUser.active(user)}" 
+                                                     rendered="#{user.status==0}" update="table messages">
+                                    </p:commandButton>
+                                </div>
+                            </p:column>
+                        </p:dataTable>
+                    </h:form>
+                </div>
+                <h:graphicImage library="images" name="icon.jpg" alt="error500" styleClass="error404"/>
+            </div>
+        </div>
+        <ui:decorate template="/WEB-INF/resources/template/fooder.xhtml">
+            <ui:param name="fooder" value="fooder"></ui:param>
+        </ui:decorate>
+    </h:body>
+</html>

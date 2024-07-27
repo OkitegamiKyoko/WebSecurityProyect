@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Error de sessión | Okitegami</title>
+        <link rel="icon" href="#{resource['images:icon.jpg']}"/>
+        <h:outputStylesheet library="css" name="error.css"/>
+    </h:head>
+    <h:body class="body">
+        <ui:decorate template="/WEB-INF/resources/template/header.xhtml">
+            <ui:param name="top" value="top"></ui:param>
+        </ui:decorate>
+        <div id="error_401" class="error">
+            <h1 class="title_Main">
+                Error en el inicio de sessión<br/>
+                Correo o contraseña incorrectos
+            </h1>
+        </div>
+        <ui:decorate template="/WEB-INF/resources/template/fooder.xhtml">
+            <ui:param name="fooder" value="fooder"></ui:param>
+        </ui:decorate>
+    </h:body>
+</html>

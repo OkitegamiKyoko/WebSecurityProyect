@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Shipment Employee | Okitegami</title>
+    </h:head>
+    <h:body styleClass="body">
+        <ui:decorate template="/WEB-INF/resources/template/header.xhtml">
+            <ui:param name="top" value="top"></ui:param>
+        </ui:decorate>
+        <div class="main">
+            <div class="formulario">
+                <div class="details">
+                    <h1 class="titulo_form h1">Detalles del envio</h1>
+                    <c:if test="#{detailsContratEmp.envio!=null}">
+                        <div class="datosDetais">
+                            <h:outputLabel styleClass="user_label " value="Codigo del envio" for="idEnvio"></h:outputLabel>
+                            <h:outputText styleClass="user_input form-control" id="idEnvio" value="#{detailsContratEmp.envio.id}"></h:outputText>
+                            <h:outputLabel styleClass="user_label " value="Fecha de inicio" for="envioInicio"></h:outputLabel>
+                            <h:outputText styleClass="user_input form-control" id="envioInicio" value="#{detailsContratEmp.envio.idContrato.inicio}">
+                                <f:convertDateTime pattern="dd/MM/yyyy" type="date"></f:convertDateTime>
+                            </h:outputText>
+                            <h:outputLabel styleClass="user_label " value="Fecha de terminació" for="envioFin"></h:outputLabel>
+                            <h:outputText styleClass="user_input form-control" id="envioFin" value="#{detailsContratEmp.envio.idContrato.fin}">
+                                <f:convertDateTime pattern="dd/MM/yyyy" type="date"></f:convertDateTime>
+                            </h:outputText>
+                            <h1 class="titulo_form h1">Dirección</h1>
+                            <h:outputLabel styleClass="user_label " value="Nombre de la empresa" for="nomEmp"></h:outputLabel>
+                            <h:outputText styleClass="user_input form-control" id="nomEmp" value="#{detailsContratEmp.envio.idContrato.idCliente.nombre}"></h:outputText>
+                            <h:outputLabel styleClass="user_label " value="Estado" for="state"></h:outputLabel>
+                            <h:outputText styleClass="user_input form-control" id="state" value="#{detailsContratEmp.envio.idContrato.idCliente.idDirect.idLocalidad.idMunicipio.idEstado.nombre}"></h:outputText>
+                            <h:outputLabel styleClass="user_label " value="Municipio" for="municipality"></h:outputLabel>
+                            <h:outputText styleClass="user_input form-control" id="municipality" value="#{detailsContratEmp.envio.idContrato.idCliente.idDirect.idLocalidad.idMunicipio.nombre}"></h:outputText>
+                            <h:outputLabel styleClass="user_label " value="Localidad" for="locality"></h:outputLabel>
+                            <h:outputText styleClass="user_input form-control" id="locality" value="#{detailsContratEmp.envio.idContrato.idCliente.idDirect.idLocalidad.nombre}"></h:outputText>
+                            <h:outputLabel styleClass="user_label " value="Codigo postal" for="cp"></h:outputLabel>
+                            <h:outputText styleClass="user_input form-control" id="cp" value="#{detailsContratEmp.envio.idContrato.idCliente.idDirect.idLocalidad.cp}"></h:outputText>
+                            <h:outputLabel styleClass="user_label " value="Calle" for="street"></h:outputLabel>
+                            <h:outputText styleClass="user_input form-control" id="street" value="#{detailsContratEmp.envio.idContrato.idCliente.idDirect.calle}"></h:outputText>
+                            <h:outputLabel styleClass="user_label " value="No. Exterior" for="ext"></h:outputLabel>
+                            <h:outputText styleClass="user_input form-control" id="ext" value="#{detailsContratEmp.envio.idContrato.idCliente.idDirect.noExt}"></h:outputText>
+                            <c:if test="#{detailsContratEmp.envio.idContrato.idCliente.idDirect.noInt!=null}">
+                                <h:outputLabel styleClass="user_label " value="No. Interior" for="int"></h:outputLabel>
+                                <h:outputText styleClass="user_input form-control" id="int" value="#{detailsContratEmp.envio.idContrato.idCliente.idDirect.noInt}"></h:outputText>
+                            </c:if>
+                            <c:if test="#{detailsContratEmp.envio.idContrato.idCliente.idDirect.noInt==null}">
+                                <h:outputLabel styleClass="user_label " value="No. Interior" for="noInt"></h:outputLabel>
+                                <h:outputText styleClass="user_input form-control" id="noInt" value="N/A"></h:outputText>
+                            </c:if>
+                    </div>
+                    </c:if>
+                    <c:if test="#{detailsContratEmp.envio==null}">
+                        <div class="datosDetais">
+                            <h1 class="alert alert-danger" style="text-align: center">Sin envios aun</h1>
+                        </div>
+                    </c:if>
+                </div>
+            </div>
+        </div>
+        <ui:decorate template="/WEB-INF/resources/template/fooder.xhtml">
+            <ui:param name="fooder" value="fooder"></ui:param>
+        </ui:decorate>
+        <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+        <h:outputScript library="js" name="header.js"></h:outputScript>
+        <h:outputScript library="js" name="efects.js"></h:outputScript>
+        <h:outputScript library="js" name="editUser.js"></h:outputScript>
+    </h:body>
+</html>

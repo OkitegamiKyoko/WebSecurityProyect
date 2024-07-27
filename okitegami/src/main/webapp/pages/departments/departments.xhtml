@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Okitegami | Departments</title>
+        <link rel="icon" href="#{resource['images:icon.jpg']}"/>
+    </h:head>
+    <h:body styleClass="body" id="body">
+        <ui:decorate template="/WEB-INF/resources/template/header.xhtml">
+            <ui:param name="top" value="top"></ui:param>
+        </ui:decorate>
+        <div class="main">
+            <div class="main_page">
+                <div class="fondo_datos" id="fondo_options">
+                    <h1 class="titulo_form h1">Departamentos</h1>
+                    <h:form rendered="false">
+                        <h:outputLabel value="Buscar"></h:outputLabel>
+                        <h:inputText pt:placeholder="Departamentos"></h:inputText>
+                        <h:commandButton value="Buscar"></h:commandButton>
+                    </h:form>
+                    <h:button outcome="add" value="Añadir"></h:button>
+                </div>
+                <div class="fondo_datos" id="fondo_table">
+                    <h:dataTable class="tabla" value="#{departmentController.findDepartamentosEntities()}" var="department">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="ID"></h:outputText>
+                            </f:facet>
+                                <h:outputText value="#{department.id}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="NAME"></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{department.nombre}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Descripcion"></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{department.descripcion}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="STATUS"></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{status.status(department.status)}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="ACTIONS"></h:outputText>
+                            </f:facet>
+                            <h:form style="display: flex; justify-content: space-evenly">
+                                <h:commandButton value="Details" action="#{detailsDepart.goDep(department)}"></h:commandButton>
+                                <h:panelGroup rendered="#{sessionController.permisos('Administradores')||sessionController.permisos('Recursos Humanos')}" >
+                                    <h:commandButton value="Edit" action="#{departmentController.details(department)}" ></h:commandButton>
+                                    <h:commandButton value="Desactive" action="#{departmentController.desactive(department)}"  rendered="#{department.status==1}"></h:commandButton>
+                                    <h:commandButton value="Reactive" action="#{departmentController.reactive(department)}" rendered="#{department.status==0}"></h:commandButton>
+                                </h:panelGroup>
+                            </h:form>
+                        </h:column>
+                    </h:dataTable>
+                </div>
+                <h:graphicImage library="images" name="icon.jpg" alt="error500" styleClass="error404"/>
+            </div>
+        </div>
+        <h:outputScript library="js" name="efects.js"/>
+        <ui:decorate template="/WEB-INF/resources/template/fooder.xhtml"></ui:decorate>
+    </h:body>
+</html>

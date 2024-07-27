@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Okitegami | Users</title>
+        <link rel="icon" href="#{resource['images:icon.jpg']}"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+        <h:outputStylesheet library="css" name="header.css"/>
+    </h:head>
+    <h:body styleClass="body" id="body">
+        <ui:decorate template="/WEB-INF/resources/template/header.xhtml">
+            <ui:param name="top" value="top"></ui:param>
+        </ui:decorate>
+        <div class="main">
+            <div class="main_page">
+                <div class="fondo_datos" id="fondo_options">
+                    <h1 class="titulo_form h1">Envios</h1>
+                </div>
+                <div class="fondo_datos" id="fondo_table">
+                    <h:dataTable class="tabla" value="#{enviosCont.findEnviosEntities()}" var="env">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="ID"></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{env.id}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="START"></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{env.idContrato.inicio}">
+                                <f:convertDateTime pattern="dd/MM/yyyy" type="date"></f:convertDateTime>
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="END"></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{env.idContrato.fin}">
+                                <f:convertDateTime pattern="dd/MM/yyyy" type="date"></f:convertDateTime>
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="ID EMPLOYEE"></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{env.idEmpleado.id}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="STATUS"></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{status.status(env.idContrato.status)}"></h:outputText>
+                            <c:if test="#{env.idContrato.status==1}">
+                                <h:outputText value="Activo"></h:outputText>
+                            </c:if>
+                            <c:if test="#{env.idContrato.status==0}">
+                                <h:outputText value="Inactivo"></h:outputText>
+                            </c:if>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="ACTIONS"></h:outputText>
+                            </f:facet>
+                            <h:form style="display: flex; justify-content: space-evenly">
+                                <h:commandButton value="Details" action="#{detailsContratEmp.verEnvio(env.idEmpleado, null)}" ></h:commandButton>
+                                <h:commandButton value="Edit" action="#{userController.editUser(user)}" ></h:commandButton>
+                                <h:commandButton value="Desactive" action="#{userController.desactive(user)}"  rendered="#{user.status==1}"></h:commandButton>
+                                <h:commandButton value="Reactive" action="#{userController.reactive(user)}" rendered="#{user.status==0}"></h:commandButton>
+                            </h:form>
+                        </h:column>
+                    </h:dataTable>
+                </div>
+                <h:graphicImage library="images" name="icon.jpg" alt="error500" styleClass="error404"/>
+            </div>
+        </div>
+        <ui:decorate template="/WEB-INF/resources/template/fooder.xhtml">
+            <ui:param name="fooder" value="fooder"></ui:param>
+        </ui:decorate>
+        <h:outputScript library="js" name="efects.js"/>
+    </h:body>
+</html>

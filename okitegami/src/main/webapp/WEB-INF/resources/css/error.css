@@ -1,0 +1,45 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 10 abr 2023, 05:56:15
+    Author     : meli_
+*/
+.body{
+    flex-direction: column;
+}
+.title_Main{
+    font-size: 5em;
+    text-align: center;
+    position: static;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 17px 4px rgba(0,0,0,0.9);
+    min-width: 300px;
+}
+.sub_Title_Main{
+    font-size: 5em;
+    text-align: center;
+    margin-top: 20px;
+    position: static;
+}
+.error{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    text-align: center;
+    align-items: center;
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+}
+#error_401{
+    background-image: url("#{resource['images/error_401.png']}");
+}
+#error_403{
+    background-image: url("#{resource['images/error_403.png']}");
+}
+h1,h2{
+    margin: 10px;
+}

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Loging</title>
+        <link rel="icon" href="#{resource['images:icon.jpg']}"/>
+    </h:head>
+    <h:body styleClass="body">
+        <ui:decorate template="/WEB-INF/resources/template/header.xhtml"></ui:decorate>
+        <div class="main_form">
+            <div class="formulario">
+                <h:form styleClass="loging">
+                    <h1 class="titulo_form h1">Loging</h1>
+                    <h:outputLabel styleClass="user_label col-sm-2 col-form-label" value="Correo" for="userEmail"></h:outputLabel>
+                    <h:inputText styleClass="user_input form-control" id="userEmail" requiredMessage="hola" pt:placeholder="correo@example.com" value="#{sessionController.session.email}"></h:inputText>
+                    <h:outputLabel styleClass="password_label col-sm-2 col-form-label" value="Contraseña" for="password"></h:outputLabel>
+                    <h:inputSecret styleClass="password_input form-control" id="password" pt:placeholder="password" value="#{sessionController.session.password}"></h:inputSecret>
+                    <div class="botones_form">
+                        <h:button value="Registrar" outcome="register" styleClass="btn btn-primary"></h:button>
+                        <h:commandButton value="Iniciar" type="summit" styleClass="btn btn-success" action="#{sessionController.validarSession()}"></h:commandButton>
+                    </div>
+                </h:form>
+                <div class="botones_form navegation_page_button btn">
+                    <button onclick="window.history.back();" title="Volver" class="btn btn-dark">Volver</button>
+                </div>
+            </div>
+        </div>
+        <ui:decorate template="/WEB-INF/resources/template/fooder.xhtml">
+            <ui:param name="fooder" value="fooder"></ui:param>
+        </ui:decorate>
+    </h:body>
+</html>

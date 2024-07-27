@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <ui:composition>
+        <ui:insert name="menuUser">
+            <div id="menu_web_user">
+                <ul style="list-style-type: none">
+                    <h:form style="flex-direction: column; margin: 0px">
+                        <li><h:commandLink value="Mi cuenta" action="#{userController.details(sessionController.user)}" styleClass="TextLinkMenu"></h:commandLink></li>
+                        <li><h:commandLink value="Actualizar cuenta" action="#{userController.editUser(sessionController.user)}" styleClass="TextLinkMenu"></h:commandLink></li>
+                        <li><h:link value="Actualizar contraseña" outcome="password" styleClass="TextLinkMenu"></h:link></li>
+                        <li><h:commandButton value="Cerrar sesión" action="#{sessionController.close()}" styleClass="btn btn-danger" style="display: flex; justify-items: center"/></li>
+                    </h:form>
+                </ul>
+            </div>
+        </ui:insert>
+    </ui:composition>
+</html>

@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+    background-color:#28c4dd;
+    color:black;
+}
+body{
+    overflow: overlay;
+}
+.body::-webkit-scrollbar{
+    width: 0px;
+    border-radius: 10px;
+}
+.body::-webkit-scrollbar-thumb {
+    background-color:#0c8c00;
+    border-radius: 10px;
+}
+.body::-webkit-scrollbar-thumb:hover{
+    background-color:#54ff43;
+    border-radius: 10px;
+}
+.body::-webkit-scrollbar:hover{
+    width: 15px;
+}
+.body{
+    background-image: url("#{resource['images/index_background.png']}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /*backface-visibility: ;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

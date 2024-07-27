@@ -1,0 +1,14 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 10 abr 2023, 17:11:17
+    Author     : meli_
+*/
+.title_Main{
+    font-family: dentifier;
+    font-size: 10em;
+    text-align: center;
+    position: absolute;
+}

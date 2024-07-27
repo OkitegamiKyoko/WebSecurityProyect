@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only">
+        <Node id="pages/users/userDetails.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="index.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="pages/users/users.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="pages/users/password.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="*" x="1150" y="150" zoom="true"/>
+        <Node id="pages/departments/departments.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="pages/about/about.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="pages/departments/editDepartment.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="pages/register/register.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="pages/users/userEdit.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="pages/departments/addDepartment.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="pages/loging/loging.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="pages/jobs/jobs.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="pages/departments/detailsDepartment.xhtml" x="150" y="450" zoom="true"/>
+    </Scope>
+    <Scope Scope="Project">
+        <Node id="pages/users/userDetails.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="pages/contrats/employees/contratDetails.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="pages/error/error_404.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="pages/formats/employee/contract.xhtml" x="650" y="600" zoom="true"/>
+        <Node id="pages/clients/clientDetails.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="pages/about/about.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="pages/users/userAdd.xhtml" x="150" y="900" zoom="true"/>
+        <Node id="pages/employees/employees.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="pages/error/error_401.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="pages/clients/clients.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="pages/departments/editDepartment.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="pages/error/error_501.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="pages/users/userEdit.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="pages/error/error_403.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="pages/formats/customer/contract.xhtml" x="650" y="750" zoom="true"/>
+        <Node id="index.xhtml" x="650" y="600" zoom="true"/>
+        <Node id="pages/users/users.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="pages/users/password.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="pages/register/registerClient.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="pages/contrats/employees/contrats.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="*" x="1150" y="300" zoom="true"/>
+        <Node id="pages/departments/departments.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="pages/contrats/employees/contratsEmployee.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="pages/shipments/shipments.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="pages/shipments/shipmentDetails.xhtml" x="1150" y="450" zoom="true"/>
+        <Node id="pages/error/error_500.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="pages/formats/employee/shipments.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="pages/register/register.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="pages/departments/addDepartment.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="pages/loging/loging.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="pages/jobs/jobs.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="pages/departments/detailsDepartment.xhtml" x="650" y="150" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations">
+        <Node id="pages/users/userDetails.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="pages/contrats/employees/contratsEmployees.xhtml" x="900" y="600" zoom="true"/>
+        <Node id="pages/contrats/employees/contratsClients.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="pages/clients/clientDetails.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="pages/about/about.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="pages/employees/employees.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="pages/users/userAdd.xhtml" x="150" y="900" zoom="true"/>
+        <Node id="pages/error/error_401.xhtml" x="1150" y="300" zoom="true"/>
+        <Node id="pages/clients/clients.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="pages/departments/editDepartment.xhtml" x="1400" y="300" zoom="true"/>
+        <Node id="pages/users/userEdit.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="pages/error/error_403.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="index.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="pages/users/users.xhtml" x="650" y="600" zoom="true"/>
+        <Node id="pages/users/password.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="pages/register/registerClient.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="*" x="1150" y="150" zoom="true"/>
+        <Node id="pages/departments/departments.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="pages/contrats/employees/contratsEmployee.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="pages/shipments/shipmentDetails.xhtml" x="1150" y="450" zoom="true"/>
+        <Node id="pages/register/register.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="pages/departments/addDepartment.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="pages/loging/loging.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="pages/jobs/jobs.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="pages/departments/detailsDepartment.xhtml" x="1650" y="150" zoom="true"/>
+    </Scope>
+</Scene>

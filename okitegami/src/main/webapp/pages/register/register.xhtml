@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Register</title>
+        <link rel="icon" href="#{resource['images:icon.jpg']}"/>
+    </h:head>
+    <h:body styleClass="body">
+        <ui:decorate template="/WEB-INF/resources/template/header.xhtml">
+            <ui:param name="top" value="top"></ui:param>
+        </ui:decorate>
+        <div class="main_form" style="margin-top: 60px;">
+            <div class="formulario">
+                <h:form enctype="multipart/form-data" prependId="false" id="form" styleClass="loging" >
+                    <h1 class="titulo_form h1">Register</h1>
+                    <h:graphicImage value="/image?ruta=#{createUser.userNew.image}" rendered="#{createUser.userNew.image==null}" style="width: 200px; height: 200px; border-radius: 50%; display: flex;align-self: center; object-fit: cover;" id='userImage'></h:graphicImage>
+                    <h:outputLabel styleClass="user_label " value="Nombre de usuario" for="userName"></h:outputLabel>
+                    <h:inputText styleClass="user_input form-control" id="userName" pt:placeholder="Ususario" value="#{createUser.userNew.name}" autocomplete="false" required="true"  requiredMessage="Campo requerido" validatorMessage="Nombre de usuario no valido">
+                        <f:validateRegex pattern="^([A-Z]{1}[a-z]{1,}[^\s])$"></f:validateRegex>
+                    </h:inputText>
+                    <p:message for="userName"></p:message>
+                    <h:outputLabel styleClass="user_label " value="Foto de usuario" for="userImage"></h:outputLabel>
+                    <p:fileUpload styleClass="inputFile" id="userImageButon" value="#{createUser.file}" required="false" mode="simple" skinSimple="true" chooseButtonTitle="Buscar" update="messages" sizeLimit="5000000" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" validateContentType="true" accept=".gif,.jpg,.jpeg,.png" invalidSizeMessage="Tamaño maximo 5Mb"></p:fileUpload>
+                    <p:message for="userImageButon" id="messages"></p:message>
+                    <h:outputLabel styleClass="user_label " value="Correo" for="userEmail"></h:outputLabel>
+                    <h:inputText styleClass="user_input form-control" id="userEmail" pt:placeholder="correo@example.com" value="#{createUser.userNew.email}" autocomplete="false" required="true" requiredMessage="Campo requerido" validatorMessage="Correo no valido" validator="#{createUser.validateEmail}">
+                        <f:validateRegex pattern="^(([a-z|\_]){1,}@[a-z|0-9]{1,}([\.|a-z|0-9]|){1,})$"></f:validateRegex>
+                    </h:inputText>
+                    <p:message for="userEmail"></p:message>
+                    <h:outputLabel styleClass="password_label " value="Contraseña" for="userPassword"></h:outputLabel>
+                    <p:password styleClass="password_input form-control" id="userPassword" pt:placeholder="password" value="#{createUser.userNew.password}" autocomplete="false" required="true" requiredMessage="Campo requerido" validatorMessage="Contraseña debe ser mayor a 8 o menor a 32 caracteres" validator="#{createUser.validatePass}" feedback="true" promptLabel="Por favor, introduzca su contraseña" weakLabel="Débil" goodLabel="Buena" strongLabel="Fuerte" inline="true">
+                        <f:validateLength for="userPassword" minimum="8" maximum="32"></f:validateLength>
+                    </p:password>
+                    <small style='text-align: center;'>Use mayusculas,minusculas,números y simbolos</small>
+                    <p:message for="userPassword"></p:message>
+                    <h:outputLabel styleClass="password_label" value="Confirmar contraseña" for="passwordConfirm"></h:outputLabel>
+                    <h:inputSecret styleClass="password_input form-control" id="passwordConfirm" pt:placeholder="password" autocomplete="false" required="true" requiredMessage="Campo requerido" validator="#{createUser.validatePass}"></h:inputSecret>
+                    <p:message for="passwordConfirm"></p:message>
+                    <div style='display: flex;align-content: center; justify-content: center'>
+                        <p:captcha label="Captcha" language="es" required="true" rendered="false"/>
+                    </div>
+                    <div class="botones_form">
+                        <h:button value="Iniciar" outcome="loging" styleClass="btn btn-success"></h:button>
+                        <h:commandButton value="Continuar" type="submit" action="#{createUser.toComplite()}" styleClass="btn btn-primary"></h:commandButton>
+                    </div>
+                </h:form>
+                <div class="botones_form navegation_page_button">
+                    <button onclick="window.history.back();" title="Volver" class="btn btn-dark">Volver</button>
+                </div>
+            </div>
+        </div>
+        <p:growl showDetail="true"></p:growl>
+        <ui:decorate template="/WEB-INF/resources/template/fooder.xhtml">
+            <ui:param name="fooder" value="fooder"></ui:param>
+        </ui:decorate>
+        <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+        <h:outputScript library="js" name="header.js"></h:outputScript>
+        <h:outputScript library="js" name="efects.js"></h:outputScript>
+        <h:outputScript library="js" name="editUser.js"></h:outputScript>
+    </h:body>
+</html>

@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Okitegami | Users</title>
+        <link rel="icon" href="#{resource['images:icon.jpg']}"/>
+    </h:head>
+    <h:body styleClass="body" id="body">
+        <ui:decorate template="/WEB-INF/resources/template/header.xhtml">
+            <ui:param name="top" value="top"></ui:param>
+        </ui:decorate>
+        <div class="main">
+            <div class="main_page">
+                <div class="fondo_datos" id="fondo_options">
+                    <h1 class="titulo_form h1">Clientes</h1>
+                    <h:form rendered="false">
+                        <h:outputLabel value="Buscar"></h:outputLabel>
+                        <h:inputText pt:placeholder="Client name"></h:inputText>
+                        <h:commandButton value="Buscar"></h:commandButton>
+                    </h:form>
+                </div>
+                <div class="fondo_datos" id="fondo_table">
+                    <p:dataTable class="tabla" value="#{findClients.all()}" var="client">
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="ID"></h:outputText>
+                            </f:facet>
+                                <h:outputText value="#{client.id}"></h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="NAME"></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{client.nombre}"></h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="RFC"></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{client.rfc}"></h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="AGREEMENTS"></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{client.contratosClientesList.size()}"></h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="STATUS"></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{status.status(client.idUser.status)}"></h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="ACTIONS"></h:outputText>
+                            </f:facet>
+                            <h:form style="display: flex; justify-content: space-evenly">
+                                <h:commandButton value="Details" action="#{detailsClient.goClient(client)}" ></h:commandButton>
+                                <h:commandButton value="Edit" action="#{userController.editUser(user)}" ></h:commandButton>
+                                <h:commandButton value="Desactive" action="#{userController.desactive(user)}"  rendered="#{client.idUser.status==1}"></h:commandButton>
+                                <h:commandButton value="Reactive" action="#{userController.reactive(user)}" rendered="#{client.idUser.status==0}"></h:commandButton>
+                            </h:form>
+                        </p:column>
+                    </p:dataTable>
+                </div>
+                <h:graphicImage library="images" name="icon.jpg" alt="error500" styleClass="error404"/>
+            </div>
+        </div>
+        <ui:decorate template="/WEB-INF/resources/template/fooder.xhtml"></ui:decorate>
+        <h:outputScript library="js" name="efects.js"/>
+    </h:body>
+</html>

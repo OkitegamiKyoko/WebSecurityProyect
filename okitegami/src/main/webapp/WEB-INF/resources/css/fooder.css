@@ -1,0 +1,19 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 12 abr 2023, 23:06:24
+    Author     : meli_
+*/
+#fooder{
+    display: none;
+    width: 100%;
+    height: 300px;
+}
+#boxF1{
+    width: 50%;
+    background-image: url("#{resource['images/error_500.png']}");
+    background-size: cover;
+    background-repeat: no-repeat;
+}

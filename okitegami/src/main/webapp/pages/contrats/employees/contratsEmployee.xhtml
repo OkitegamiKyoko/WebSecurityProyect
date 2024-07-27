@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Contrat Employee | Okitegami</title>
+        <link rel="icon" href="#{resource['images:icon.jpg']}"/>
+    </h:head>
+    <h:body styleClass="body">
+        <ui:decorate template="/WEB-INF/resources/template/header.xhtml">
+            <ui:param name="top" value="top"></ui:param>
+        </ui:decorate>
+        <div class="main">
+            <div class="formulario">
+                <div class="details">
+                    <h1 class="titulo_form h1">Detalles del contrato</h1>
+                    <div class="datosDetais">
+                            <h:outputLabel styleClass="user_label " value="Codigo de contrato" for="idCont"></h:outputLabel>
+                            <h:outputText styleClass="user_input form-control" id="idCont" value="#{detailsContratEmp.cont.id}">
+                            </h:outputText>
+                            <h:outputLabel styleClass="user_label " value="Fecha de inicio" for="contInicio"></h:outputLabel>
+                            <h:outputText styleClass="user_input form-control" id="contInico" value="#{detailsContratEmp.cont.inicio}">
+                                <f:convertDateTime pattern="dd/MM/yyyy" type="date"></f:convertDateTime>
+                            </h:outputText>
+                            <h:outputLabel styleClass="user_label " value="Fecha de terminación" for="contFin"></h:outputLabel>
+                            <h:outputText styleClass="user_input form-control" id="contFin" value="#{detailsContratEmp.cont.fin}">
+                                <f:convertDateTime pattern="dd/MM/yyyy" type="date"></f:convertDateTime>
+                            </h:outputText>
+                            <h:outputLabel styleClass="user_label " value="Estatus" for="clientStatus"></h:outputLabel>
+                            <c:if test="#{detailsContratEmp.cont.status==1}">
+                                <h:outputText styleClass="user_input form-control" id="clientStatus" value="Activo"></h:outputText>
+                            </c:if>
+                            <c:if test="#{detailsContratEmp.cont.status==0}">
+                                <h:outputText styleClass="user_input form-control" id="clientStatu" value="Inactivo"></h:outputText>
+                            </c:if>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ui:decorate template="/WEB-INF/resources/template/fooder.xhtml">
+            <ui:param name="fooder" value="fooder"></ui:param>
+        </ui:decorate>
+        <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+        <h:outputScript library="js" name="header.js"></h:outputScript>
+        <h:outputScript library="js" name="efects.js"></h:outputScript>
+        <h:outputScript library="js" name="editUser.js"></h:outputScript>
+    </h:body>
+</html>

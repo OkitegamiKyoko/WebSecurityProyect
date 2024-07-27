@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE payara-web-app PUBLIC "-//Payara.fish//DTD Payara Server 4 Servlet 3.0//EN" "https://docs.payara.fish/schemas/payara-web-app_4.dtd">
+<payara-web-app error-url="/pages/error/error_404.xhtml">
+  <context-root>/</context-root>
+  <security-role-mapping>
+    <role-name>Administrador</role-name>
+    <principal-name>Administrador</principal-name>
+    <group-name>Administrador</group-name>
+  </security-role-mapping>
+  <security-role-mapping>
+    <role-name>Clientes</role-name>
+    <principal-name>Clientes</principal-name>
+    <group-name>Clientes</group-name>
+  </security-role-mapping>
+  <security-role-mapping>
+    <role-name>Trabajador</role-name>
+    <principal-name>Trabajador</principal-name>
+    <group-name>Trabajador</group-name>
+  </security-role-mapping>
+  <security-role-mapping>
+    <role-name>Recursos Humanos</role-name>
+    <principal-name>Recursos Humanos</principal-name>
+    <group-name>Recursos Humanos</group-name>
+  </security-role-mapping>
+  <security-role-mapping>
+    <role-name>Empleados</role-name>
+    <principal-name>Empleados</principal-name>
+    <group-name>Empleados</group-name>
+  </security-role-mapping>
+  <security-role-mapping>
+    <role-name>Administradores</role-name>
+    <principal-name>Administradores</principal-name>
+    <group-name>Administradores</group-name>
+  </security-role-mapping>
+  <class-loader delegate="true"/>
+  <filter>
+    <filter-name>PrimeFaces FileUpload Filter</filter-name>
+    <filter-class>org.primefaces.webapp.filter.FileUploadFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>PrimeFaces FileUpload Filter</filter-name>
+    <servlet-name>Faces Servlet</servlet-name>
+  </filter-mapping>
+</payara-web-app>

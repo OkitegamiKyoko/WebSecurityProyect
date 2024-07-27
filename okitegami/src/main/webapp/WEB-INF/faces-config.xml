@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+
+-->
+<faces-config version="2.3"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd">
+    <!--Pages Server-->
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    <!--Anywhere-->
+    <navigation-rule>
+        <from-view-id>/*</from-view-id>
+        <!--#################################################################-->
+        <!--Menu-->
+        <!--#################################################################-->
+        <!--Index-->
+        <!--Outcome-->
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect>true</redirect>
+        </navigation-case>
+        <!--Action-->
+        <!--*****************************************************************-->
+        <!--About-->
+        <!--Outcome-->
+        <navigation-case>
+            <from-outcome>About</from-outcome>
+            <to-view-id>/pages/about/about.xhtml</to-view-id>
+            <redirect>true</redirect>
+        </navigation-case>
+        <!--Action-->
+        <!--*****************************************************************-->
+        <!--Users-->
+        <!--Outcome-->
+        <navigation-case>
+            <from-outcome>users</from-outcome>
+            <redirect>true</redirect>
+            <to-view-id>/pages/users/users.xhtml</to-view-id>
+        </navigation-case>
+        <!--*****************************************************************-->
+        <!--Jobs-->
+        <!--Outcome-->
+        <navigation-case>
+            <from-outcome>jobs</from-outcome>
+            <to-view-id>/pages/jobs/jobs.xhtml</to-view-id>
+            <redirect>true</redirect>
+        </navigation-case>
+        <!--*****************************************************************-->
+        <!--Clients-->
+        <!--Outcome-->
+        <navigation-case>
+            <from-outcome>clients</from-outcome>
+            <to-view-id>/pages/clients/clients.xhtml</to-view-id>
+            <redirect>true</redirect>
+        </navigation-case>
+        <!--#################################################################-->
+        <!--New User-->
+        <!--#################################################################-->
+        <!--Register-->
+        <!--Outcome-->
+        <navigation-case>
+            <from-outcome>register</from-outcome>
+            <redirect>true</redirect>
+            <to-view-id>/pages/register/register.xhtml</to-view-id>
+        </navigation-case>
+        <!--*****************************************************************-->
+        <!--Loging-->
+        <!--Outcome-->
+        <navigation-case>
+            <from-outcome>loging</from-outcome>
+            <redirect>true</redirect>
+            <to-view-id>/pages/loging/loging.xhtml</to-view-id>
+        </navigation-case>
+        <!--#################################################################-->
+        <!--Menu User-->
+        <!--#################################################################-->
+        <!--My Account-->
+        <!--Action-->
+        <navigation-case>
+            <from-outcome>detailsUser</from-outcome>
+            <from-action>#{userController.details(sessionController.user)}</from-action>
+            <redirect>true</redirect>
+            <to-view-id>/pages/users/userDetails.xhtml</to-view-id>
+        </navigation-case>
+        <!--*****************************************************************-->
+        <!--Update Account-->
+        <!--Outcome-->
+        <!--Action-->
+        <navigation-case>
+            <from-outcome>userEdit</from-outcome>
+            <from-action>#{userController.editUser(sessionController.user)}</from-action>
+            <redirect>true</redirect>
+            <to-view-id>/pages/users/userEdit.xhtml</to-view-id>
+        </navigation-case>
+        <!--*****************************************************************-->
+        <!--Update Account-->
+        <!--Outcome-->
+        <!--Action-->
+        <navigation-case>
+            <from-outcome>password</from-outcome>
+            <redirect>true</redirect>
+            <to-view-id>/pages/users/password.xhtml</to-view-id>
+        </navigation-case>
+        <!--*****************************************************************-->
+        <!--Close Session-->
+        <!--Outcome-->
+        <!--Action-->
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <from-action>#{sessionController.close()}</from-action>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>departments</from-outcome>
+            <to-view-id>/pages/departments/departments.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    <!--New User Pages-->
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    <!--Register-->
+    <navigation-rule>
+        <from-view-id>/pages/register/register.xhtml</from-view-id>
+        <!--Loging-->
+        <!--Outcome-->
+        <navigation-case>
+            <from-outcome>loging</from-outcome>
+            <to-view-id>/pages/loging/loging.xhtml</to-view-id>
+        </navigation-case>
+        <!--Register [Continue]-->
+        <!--Action-->
+        <navigation-case>
+            <from-outcome>continue</from-outcome>
+            <to-view-id>/pages/register/registerClient.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    <!--Register Data-->
+    <navigation-rule>
+        <from-view-id>/pages/register/registerClient.xhtml</from-view-id>
+        <!--Loging-->
+        <!--Outcome-->
+        <navigation-case>
+            <from-outcome>loging</from-outcome>
+            <to-view-id>/pages/loging/loging.xhtml</to-view-id>
+        </navigation-case>
+        <!--Register-->
+        <!--Action-->
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <from-action>#{createUser.createUser()}</from-action>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    <!--Loging-->
+    <navigation-rule>
+        <from-view-id>/pages/loging/loging.xhtml</from-view-id>
+        <!--#################################################################-->
+        <!--Register-->
+        <!--Outcome-->
+        <navigation-case>
+            <from-outcome>register</from-outcome>
+            <to-view-id>/pages/register/register.xhtml</to-view-id>
+        </navigation-case>
+        <!--#################################################################-->
+        <!--Loging [Summit]-->
+        <!--Action-->
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <from-action>#{sessionController.validarSession()}</from-action>
+            <redirect>true</redirect>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>error_401</from-outcome>
+            <from-action>#{sessionController.validarSession()}</from-action>
+            <to-view-id>/pages/error/error_401.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>error_403</from-outcome>
+            <from-action>#{sessionController.validarSession()}</from-action>
+            <to-view-id>/pages/error/error_403.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <!--&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
+    <!--Tables-->
+    <!--&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
+    <!--Users Pages-->
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    <!--Users-->
+    <navigation-rule>
+        <from-view-id>/pages/users/users.xhtml</from-view-id>
+        <!--#################################################################-->
+        <!--Details-->
+        <!--Action-->
+        <navigation-case>
+            <from-outcome>detailsUser</from-outcome>
+            <from-action>#{userController.details(user)}</from-action>
+            <to-view-id>/pages/users/userDetails.xhtml</to-view-id>
+        </navigation-case>
+        <!--#################################################################-->
+        <!--Add-->
+        <!--Action-->
+        <navigation-case>
+            <from-outcome>userAdd</from-outcome>
+            <to-view-id>/pages/users/userAdd.xhtml</to-view-id>
+        </navigation-case>
+        <!--#################################################################-->
+        <!--Edit-->
+        <!--Action-->
+        <navigation-case>
+            <from-outcome>userEdit</from-outcome>
+            <from-action>#{userController.editUser(user)}</from-action>
+            <to-view-id>/pages/users/userEdit.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    <!--User Details-->
+    
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    <!--User Details-->
+    
+    <!--Departments Pages-->
+    <!--Principal-->
+    <navigation-rule>
+        <from-view-id>/pages/departments/departments.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>add</from-outcome>
+            <to-view-id>/pages/departments/addDepartment.xhtml</to-view-id>
+            <redirect>true</redirect>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>edit</from-outcome>
+            <redirect>true</redirect>
+            <to-view-id>/pages/departments/editDepartment.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>details</from-outcome>
+            <from-action>#{detailsDepart.goDep(department)}</from-action>
+            <redirect>true</redirect>
+            <to-view-id>/pages/departments/detailsDepartment.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <!--Clients Pages-->
+    <!--Principal-->
+    <navigation-rule>
+        <from-view-id>/pages/clients/clients.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>details</from-outcome>
+            <from-action>#{detailsClient.goClient(client)}</from-action>
+            <redirect>true</redirect>
+            <to-view-id>/pages/clients/clientDetails.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <!--SIN ORGANIZAR-->
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>detailsContEmp</from-outcome>
+            <redirect>true</redirect>
+            <from-action>#{detailsContratEmp.verContratos(cont.idEmpleado,null)}</from-action>
+            <to-view-id>/pages/contrats/employees/contratDetails.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>detailsContEmp</from-outcome>
+            <redirect>true</redirect>
+            <from-action>#{detailsContratEmp.verContratos(null,sessionController.user)}</from-action>
+            <to-view-id>/pages/contrats/employees/contratDetails.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>contratsClients</from-outcome>
+            <redirect>true</redirect>
+            <to-view-id>/pages/contrats/clients/contrats.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>contratsEmployees</from-outcome>
+            <redirect>true</redirect>
+            <to-view-id>/pages/contrats/employees/contrats.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>employees</from-outcome>
+            <redirect>true</redirect>
+            <to-view-id>/pages/employees/employees.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>detailsEnvio</from-outcome>
+            <redirect>true</redirect>
+            <from-action>#{detailsContratEmp.verEnvio(null,sessionController.user)}</from-action>
+            <to-view-id>/pages/shipments/shipmentDetails.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>detailsEnvio</from-outcome>
+            <redirect>true</redirect>
+            <from-action>#{detailsContratEmp.verEnvio(env.idEmpleado, null)}</from-action>
+            <to-view-id>/pages/shipments/shipmentDetails.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>
