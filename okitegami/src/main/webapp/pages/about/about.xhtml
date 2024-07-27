@@ -6,11 +6,16 @@
     <h:head>
         <title>Okitegami | About</title>
         <link rel="icon" href="#{resource['images:icon.jpg']}"/>
+<<<<<<< HEAD
+=======
+        <h:outputStylesheet library="css" name="header.css"/>
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
     </h:head>
     <h:body styleClass="body" id="body" style="overflow: hidden" onclick="ver()">
         <ui:decorate template="/WEB-INF/resources/template/header.xhtml"></ui:decorate>
         <div id="about_Background" style="width: 100%; height: 100%; display: flex; align-self: center">
             <video style="width: 100%" id="about_Background_Resource" autoplay="autoplay" AutoplayAllowed="true" AutoplayAllowlist="true" loop="true">
+<<<<<<< HEAD
                 <source src="/videos" type="video/webm"></source>
             </video>
         </div>
@@ -19,5 +24,11 @@
         <h:outputScript library="js" name="header.js"></h:outputScript>
         <h:outputScript library="js" name="efects.js"></h:outputScript>
         <h:outputScript library="js" name="about.js"></h:outputScript>
+=======
+                <source src="#{resource['videos:about.mp4']}" type="video/mp4"></source>
+            </video>
+        </div>
+        <h:outputScript library="js" name="efects.js"/>
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
     </h:body>
 </html>

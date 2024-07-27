@@ -4,8 +4,12 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+<<<<<<< HEAD
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+=======
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
     <h:head>
         <title>Okitegami | User edit</title>
         <link rel="icon" href="#{resource['images:icon.jpg']}"/>
@@ -20,6 +24,7 @@
                 <h:form id="edit" styleClass="loging" enctype="multipart/form-data">
                     <h1 class="titulo_form h1">Actualizar Datos</h1>
                     <h:outputLabel styleClass="user_label " value="Nombre de usuario" for="user"></h:outputLabel>
+<<<<<<< HEAD
                     <h:inputText styleClass="user_input form-control" id="userName" requiredMessage="Campo requerido" value="#{userController.userEdit.name}">
                         <f:validateRegex pattern="^([A-Z]{1}[a-z]{1,}[^\s])$"></f:validateRegex>
                     </h:inputText>
@@ -36,10 +41,27 @@
                     <c:if test="#{userController.userEdit.idRol.id!=1 or sessionController.user.email==userController.userEdit.email}">
                         <h:button value="Cambiar contraseña" outcome="password" styleClass="btn btn-primary"></h:button>
                     </c:if>
+=======
+                    <h:inputText styleClass="user_input form-control" id="userName" requiredMessage="hola" value="#{userController.userEdit.name}"></h:inputText>
+                    <h:outputLabel styleClass="user_label " value="Foto de usuario" for="user"></h:outputLabel>
+                    <h:inputFile styleClass="inputFile"></h:inputFile>
+                    <h:outputLabel styleClass="user_label " value="Usuario" for="user"></h:outputLabel>
+                    <h:inputText styleClass="user_input form-control" id="user" requiredMessage="hola" pt:placeholder="correo@example.com" value="#{userController.userEdit.email}"></h:inputText>
+                    <h:outputLabel styleClass="password_label " value="Contraseña" for="password"></h:outputLabel>
+                    <h:inputSecret styleClass="password_input form-control" id="password" pt:placeholder="password" value="#{userController.userEdit.password}" redisplay="true" label="Password">
+                        <f:validateLength minimum="8" maximum="32"></f:validateLength>
+                    </h:inputSecret>
+                    <h:message for="password"></h:message>
+                    <h:outputLabel styleClass="password_label " value="Confirmar contraseña" for="passwordConfirm"></h:outputLabel>
+                    <h:inputText styleClass="password_input form-control" id="passwordConfirm" pt:placeholder="password" value="#{userController.passwordConfirm}">
+                        <f:validateLength minimum="8" maximum="32"></f:validateLength>
+                    </h:inputText>
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
                     <h:outputLabel styleClass="password_label " value="Fecha de ingreso" for="dataUser"></h:outputLabel>
                     <h:inputText class="password_input form-control" id="dateUser" value="#{userController.userEdit.dateIngreso}" required="true" requiredMessage="Campo requerido" label="Fecha" validatorMessage="Error:" disabled="true">
                         <f:convertDateTime pattern="dd/MM/yyyy" type="date"></f:convertDateTime>
                     </h:inputText>
+<<<<<<< HEAD
                     <h:outputLabel styleClass="password_label " value="Datos Personales" for="dataUser"></h:outputLabel>
                     <c:if test="#{userController.userEdit.idRol.id!=3}">
                         <h:commandButton value="Editar datos personales de la cuenta" action="#{employeEdit.edit(userController.userEdit.empleadosList)}" styleClass="btn btn-primary"></h:commandButton>
@@ -53,12 +75,23 @@
                     </div>
                 </h:form>
                 <div class="botones_form navegation_page_button">
+=======
+                    <div class="botones_form">
+                        <h:button value="Cancelar" outcome="users" styleClass="btn btn-sucess" onclick="#{userController.pruebas()}"></h:button>
+                        <h:commandButton value="Guardar" type="summit" action="#{userController.edit(userController.userEdit)}" styleClass="btn btn-primary"></h:commandButton>
+                    </div>
+                </h:form>
+                <div class="botones_form navegation_page_button btn">
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
                     <button onclick="window.history.back();" title="Volver" class="btn btn-dark">Volver</button>
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
         <ui:decorate template="/WEB-INF/resources/template/fooder.xhtml">
             <ui:param name="fooder" value="fooder"></ui:param>
         </ui:decorate>
+=======
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
     </h:body>
 </html>

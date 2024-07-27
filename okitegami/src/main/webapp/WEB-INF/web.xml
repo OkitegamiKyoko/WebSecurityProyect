@@ -13,6 +13,7 @@
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+<<<<<<< HEAD
     <servlet>
         <servlet-name>PDFContratCliente</servlet-name>
         <servlet-class>com.mycompany.okitegami.servlet.PDFContratCliente</servlet-class>
@@ -24,6 +25,11 @@
     <servlet-mapping>
         <servlet-name>PDFContratCliente</servlet-name>
         <url-pattern>/PDFContratCliente</url-pattern>
+=======
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>/faces/*</url-pattern>
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -31,6 +37,7 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
+<<<<<<< HEAD
         <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
     <error-page>
@@ -169,10 +176,32 @@
         </auth-constraint>
     </security-constraint>
     <!--TYPE FILES-->
+=======
+        <welcome-file>faces/index.xhtml</welcome-file>
+    </welcome-file-list>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/faces/pages/error/error_404.xhtml</location>
+    </error-page>
+    <error-page>
+        <error-code>401</error-code>
+        <location>/faces/pages/error/error_401.xhtml</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/faces/pages/error/error_500.xhtml</location>
+    </error-page>
+     <error-page>
+        <error-code>501</error-code>
+        <location>/faces/pages/error/error_501.xhtml</location>
+    </error-page>
+    
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
     <mime-mapping>
         <extension>mp4</extension>
         <mime-type>video/mp4</mime-type>
     </mime-mapping>
+<<<<<<< HEAD
     <mime-mapping>
         <extension>webm</extension>
         <mime-type>video/webm</mime-type>
@@ -213,4 +242,6 @@
         <param-name>primefaces.UPLOADER</param-name>
         <param-value>auto</param-value>
     </context-param>
+=======
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
 </web-app>

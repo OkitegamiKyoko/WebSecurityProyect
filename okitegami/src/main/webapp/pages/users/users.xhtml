@@ -4,10 +4,15 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
+<<<<<<< HEAD
       xmlns:b="http://bootsfaces.net/ui"
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
       xmlns:p="http://primefaces.org/ui">
+=======
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
     <h:head>
         <title>Okitegami | Users</title>
         <link rel="icon" href="#{resource['images:icon.jpg']}"/>
@@ -16,12 +21,16 @@
         <ui:decorate template="/WEB-INF/resources/template/header.xhtml">
             <ui:param name="top" value="top"></ui:param>
         </ui:decorate>
+<<<<<<< HEAD
         <p:growl showDetail="true" id="messages"></p:growl>
+=======
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
         <div class="main">
             <div class="main_page">
                 <div class="fondo_datos" id="fondo_options">
                     <h1 class="titulo_form h1">Usuarios</h1>
                     <h:form>
+<<<<<<< HEAD
                         <p:dataTable id="table"  value="#{findUser.list}" var="user" 
                                      widgetVar="table" rows="15" paginator="true" 
                                      paginatorPosition="bottom" 
@@ -84,5 +93,60 @@
         <ui:decorate template="/WEB-INF/resources/template/fooder.xhtml">
             <ui:param name="fooder" value="fooder"></ui:param>
         </ui:decorate>
+=======
+                        <h:outputLabel value="Buscar"></h:outputLabel>
+                        <h:inputText pt:placeholder="Usuario"></h:inputText>
+                        <h:commandButton value="Buscar"></h:commandButton>
+                    </h:form>
+                </div>
+                <div class="fondo_datos" id="fondo_table">
+                    <h:dataTable class="tabla" value="#{userController.findUsersEntities()}" var="user">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="ID"></h:outputText>
+                            </f:facet>
+                                <h:outputText value="#{user.id}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="NAME"></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{user.name}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="E-MAIL"></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{user.email}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Rol"></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{user.idRol.rol}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="STATUS"></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{user.status}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="ACTIONS"></h:outputText>
+                            </f:facet>
+                            <h:form style="display: flex; justify-content: space-evenly">
+                                <h:commandButton value="Details" action="#{userController.details(user)}" ></h:commandButton>
+                                <h:commandButton value="Edit" action="#{userController.editUser(user)}" ></h:commandButton>
+                                <h:commandButton value="Desactive" action="#{userController.desactive(user)}"  rendered="#{user.status==1}"></h:commandButton>
+                                <h:commandButton value="Reactive" action="#{userController.reactive(user)}" rendered="#{user.status==0}"></h:commandButton>
+                            </h:form>
+                        </h:column>
+                    </h:dataTable>
+                </div>
+                <h:graphicImage library="images" name="icon.jpg" alt="error500" styleClass="error404"/>
+            </div>
+        </div>
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
     </h:body>
 </html>

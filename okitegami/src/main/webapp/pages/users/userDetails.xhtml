@@ -23,7 +23,11 @@
                 <h1 class="titulo_form h1">Detalles de usuario</h1>
                 <div class="datosDetaisUser">
                     <div class="datosImage">
+<<<<<<< HEAD
                         <h:graphicImage value="/image?ruta=#{userController.userDetails.image}" style="width: 200px; height: 200px; border-radius: 50%; display: flex;align-self: center"></h:graphicImage>
+=======
+                        <h:graphicImage value="#{userController.userDetails.image}" style="width: 200px; height: 200px; border-radius: 50%; display: flex;align-self: center"></h:graphicImage>
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
                     </div>
                     <div class="datos">
                         <h:outputLabel styleClass="user_label " value="Nombre de usuario" for="user"></h:outputLabel>
@@ -46,14 +50,21 @@
                     </div>
                 </div>
                 <div class="botones_form">
+<<<<<<< HEAD
                     <h:button value="Editar" styleClass="btn btn-success" outcome="#{userController.editUser(userController.userDetails)}" disabled="#{!userController.userDetails.email.equals(sessionController.user.email) and sessionController.session.nivel!=1}"></h:button>
+=======
+                    <h:button value="Editar" styleClass="btn btn-success" outcome="#{userController.editUser(userController.userDetails)}"></h:button>
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
                     <button tittle="Volver" class="btn btn-dark" onclick="window.history.back();">Volver</button>
                 </div>
             </div>
         </div>
         </div>
+<<<<<<< HEAD
          <ui:decorate template="/WEB-INF/resources/template/fooder.xhtml">
             <ui:param name="fooder" value="fooder"></ui:param>
         </ui:decorate>
+=======
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
     </h:body>
 </html>

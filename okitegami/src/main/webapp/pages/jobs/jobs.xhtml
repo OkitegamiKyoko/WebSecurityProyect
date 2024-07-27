@@ -18,7 +18,11 @@
             <div class="main_page">
                 <div class="fondo_datos" id="fondo_options">
                     <h1 class="titulo_form h1">Puestos</h1>
+<<<<<<< HEAD
                     <h:form rendered="false">
+=======
+                    <h:form>
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
                         <h:outputLabel value="Buscar"></h:outputLabel>
                         <h:inputText pt:placeholder="Departamentos"></h:inputText>
                         <h:commandButton value="Buscar"></h:commandButton>
@@ -48,19 +52,30 @@
                             <f:facet name="header">
                                 <h:outputText value="STATUS"></h:outputText>
                             </f:facet>
+<<<<<<< HEAD
                             <h:outputText value="#{status.status(job.status)}"></h:outputText>
+=======
+                            <h:outputText value="#{job.status}"></h:outputText>
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="ACTIONS"></h:outputText>
                             </f:facet>
                             <h:form style="display: flex; justify-content: space-evenly">
+<<<<<<< HEAD
                                 <h:commandButton value="Details" action="#{jobController.edit(department)}" ></h:commandButton>
                                 <h:panelGroup rendered="#{sessionController.permisos('Administradores')||sessionController.permisos('Recursos Humanos')}" >
                                     <h:commandButton value="Edit" action="#{jobController.details(department)}" ></h:commandButton>
                                     <h:commandButton value="Desactive" action="#{jobController.desactive(department)}"  rendered="#{job.status==1}"></h:commandButton>
                                     <h:commandButton value="Reactive" action="#{jobController.reactive(department)}" rendered="#{job.status==0}"></h:commandButton>
                                 </h:panelGroup>
+=======
+                                <h:commandButton value="Edit" action="#{jobController.edit(department)}" ></h:commandButton>
+                                <h:commandButton value="Edit" action="#{jobController.details(department)}" ></h:commandButton>
+                                <h:commandButton value="Desactive" action="#{jobController.desactive(department)}"  rendered="#{job.status==1}"></h:commandButton>
+                                <h:commandButton value="Reactive" action="#{jobController.reactive(department)}" rendered="#{job.status==0}"></h:commandButton>
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
                             </h:form>
                         </h:column>
                     </h:dataTable>
@@ -68,8 +83,11 @@
                 <h:graphicImage library="images" name="icon.jpg" alt="error500" styleClass="error404"/>
             </div>
         </div>
+<<<<<<< HEAD
         <ui:decorate template="/WEB-INF/resources/template/fooder.xhtml">
             <ui:param name="fooder" value="fooder"></ui:param>
         </ui:decorate>
+=======
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
     </h:body>
 </html>

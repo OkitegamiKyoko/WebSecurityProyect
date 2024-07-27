@@ -24,10 +24,55 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd">
     <!--Pages Server-->
+<<<<<<< HEAD
     <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
     <!--Anywhere-->
     <navigation-rule>
         <from-view-id>/*</from-view-id>
+=======
+    <!--Index-->
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>loging</from-outcome>
+            <to-view-id>/pages/loging/loging.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>register</from-outcome>
+            <to-view-id>/pages/register/register.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>About</from-outcome>
+            <to-view-id>/pages/about/about.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>details</from-outcome>
+            <from-action>#{userController.details(sessionController.user)}</from-action>
+            <redirect>true</redirect>
+            <to-view-id>/pages/users/userDetails.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>error_401</from-outcome>
+            <to-view-id>/pages/error/error_401.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <!--Anyway-->
+    <navigation-rule>
+        <from-view-id>/*</from-view-id>
+        <!--New User-->
+        <navigation-case>
+            <from-outcome>register</from-outcome>
+            <to-view-id>/pages/register/register.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>loging</from-outcome>
+            <to-view-id>/pages/loging/loging.xhtml</to-view-id>
+        </navigation-case>
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
         <!--#################################################################-->
         <!--Menu-->
         <!--#################################################################-->
@@ -39,6 +84,15 @@
             <redirect>true</redirect>
         </navigation-case>
         <!--Action-->
+<<<<<<< HEAD
+=======
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <from-action>#{userController.create()}</from-action>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect>true</redirect>
+        </navigation-case>
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
         <!--*****************************************************************-->
         <!--About-->
         <!--Outcome-->
@@ -53,6 +107,7 @@
         <!--Outcome-->
         <navigation-case>
             <from-outcome>users</from-outcome>
+<<<<<<< HEAD
             <redirect>true</redirect>
             <to-view-id>/pages/users/users.xhtml</to-view-id>
         </navigation-case>
@@ -96,11 +151,27 @@
         <!--My Account-->
         <!--Action-->
         <navigation-case>
+=======
+            <to-view-id>/pages/users/users.xhtml</to-view-id>
+        </navigation-case>
+        <!--Menu User-->
+        <!--My Account-->
+        <!--Outcome-->
+        <!--Action-->
+        <navigation-case>
+            <from-outcome>userEdit</from-outcome>
+            <from-action>#{userController.edit(user)}</from-action>
+            <redirect>true</redirect>
+            <to-view-id>/pages/users/userEdit.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
             <from-outcome>detailsUser</from-outcome>
             <from-action>#{userController.details(sessionController.user)}</from-action>
             <redirect>true</redirect>
             <to-view-id>/pages/users/userDetails.xhtml</to-view-id>
         </navigation-case>
+<<<<<<< HEAD
         <!--*****************************************************************-->
         <!--Update Account-->
         <!--Outcome-->
@@ -128,12 +199,20 @@
             <from-outcome>index</from-outcome>
             <from-action>#{sessionController.close()}</from-action>
             <to-view-id>/index.xhtml</to-view-id>
+=======
+        <navigation-case>
+            <from-outcome>details</from-outcome>
+            <from-action>#{detailsDepart.goDep(department)}</from-action>
+            <redirect>true</redirect>
+            <to-view-id>/pages/departments/detailsDepartment.xhtml</to-view-id>
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
         </navigation-case>
         <navigation-case>
             <from-outcome>departments</from-outcome>
             <to-view-id>/pages/departments/departments.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+<<<<<<< HEAD
     <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
     <!--New User Pages-->
     <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
@@ -142,10 +221,17 @@
         <from-view-id>/pages/register/register.xhtml</from-view-id>
         <!--Loging-->
         <!--Outcome-->
+=======
+    <!--Errores-->
+    <!--Error 404-->
+    <navigation-rule>
+        <from-view-id>/pages/error/error_404.xhtml</from-view-id>
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
         <navigation-case>
             <from-outcome>loging</from-outcome>
             <to-view-id>/pages/loging/loging.xhtml</to-view-id>
         </navigation-case>
+<<<<<<< HEAD
         <!--Register [Continue]-->
         <!--Action-->
         <navigation-case>
@@ -178,21 +264,128 @@
         <!--#################################################################-->
         <!--Register-->
         <!--Outcome-->
+=======
+        <navigation-case>
+            <from-outcome>case3</from-outcome>
+            <to-view-id>/pages/about/about.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>case4</from-outcome>
+            <to-view-id>/pages/about/about.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
         <navigation-case>
             <from-outcome>register</from-outcome>
             <to-view-id>/pages/register/register.xhtml</to-view-id>
         </navigation-case>
+<<<<<<< HEAD
         <!--#################################################################-->
         <!--Loging [Summit]-->
         <!--Action-->
         <navigation-case>
             <from-outcome>index</from-outcome>
             <from-action>#{sessionController.validarSession()}</from-action>
+=======
+    </navigation-rule>
+    <!--Error 501-->
+    <navigation-rule>
+        <from-view-id>/pages/error/error_501.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>case1</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <!--Error 500-->
+    <navigation-rule>
+        <from-view-id>/pages/error/error_500.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>register</from-outcome>
+            <to-view-id>/pages/register/register.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>loging</from-outcome>
+            <to-view-id>/pages/loging/loging.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>About</from-outcome>
+            <to-view-id>/pages/about/about.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <!--Error 403-->
+    <navigation-rule>
+        <from-view-id>/pages/error/error_403.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>loging</from-outcome>
+            <to-view-id>/pages/loging/loging.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <!--Error 401-->
+    <navigation-rule>
+        <from-view-id>/pages/error/error_401.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>loging</from-outcome>
+            <to-view-id>/pages/loging/loging.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <!--User Pages-->
+    <!--Register-->
+    <navigation-rule>
+        <from-view-id>/pages/register/register.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>loging</from-outcome>
+            <to-view-id>/pages/loging/loging.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>about</from-outcome>
+            <to-view-id>/pages/about/about.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <from-action>#{userController.create(userController.userNew)}</from-action>
             <redirect>true</redirect>
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>error_401</from-outcome>
+            <to-view-id>/pages/error/error_401.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <!--Loging-->
+    <navigation-rule>
+        <from-view-id>/pages/loging/loging.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>register</from-outcome>
+            <to-view-id>/pages/register/register.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>About</from-outcome>
+            <to-view-id>/pages/about/about.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
+            <redirect>true</redirect>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>error_401</from-outcome>
+<<<<<<< HEAD
             <from-action>#{sessionController.validarSession()}</from-action>
             <to-view-id>/pages/error/error_401.xhtml</to-view-id>
         </navigation-case>
@@ -240,6 +433,40 @@
     <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
     <!--User Details-->
     
+=======
+            <to-view-id>/pages/error/error_401.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>error_404</from-outcome>
+            <to-view-id>/pages/error/error_404.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <!--Table-->
+    <navigation-rule>
+        <from-view-id>/pages/users/users.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <from-action>#{sessionController.close()}</from-action>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>details</from-outcome>
+            <to-view-id>/pages/users/userDetails.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>userEdit</from-outcome>
+            <to-view-id>/pages/users/userEdit.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>users</from-outcome>
+            <to-view-id>/pages/users/users.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>About</from-outcome>
+            <to-view-id>/pages/about/about.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
     <!--Departments Pages-->
     <!--Principal-->
     <navigation-rule>
@@ -256,6 +483,7 @@
         </navigation-case>
         <navigation-case>
             <from-outcome>details</from-outcome>
+<<<<<<< HEAD
             <from-action>#{detailsDepart.goDep(department)}</from-action>
             <redirect>true</redirect>
             <to-view-id>/pages/departments/detailsDepartment.xhtml</to-view-id>
@@ -315,4 +543,9 @@
             <to-view-id>/pages/shipments/shipmentDetails.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+=======
+            <to-view-id>/pages/departments/detailsDepartment.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+>>>>>>> 3ec3023e315bb2dc3952b0d72da17fb39fbf9c91
 </faces-config>
